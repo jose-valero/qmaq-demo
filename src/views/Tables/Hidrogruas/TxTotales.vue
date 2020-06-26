@@ -3,12 +3,25 @@
     <b-table
       :sticky-header="stickyHeader"
       :no-border-collapse="noCollapse"
-      responsive
+      responsive="sm"
       :items="items"
       :fields="fields"
-      vertical
+      :years="years"
       small
+      striped
+      hover
+      caption-top
+      class="text-center"
     >
+      <template v-slot:thead-top>
+        <div></div>
+        <b-th variant="primary" colspan="15"  >{{ years }}</b-th>
+      </template>
+
+      <template v-slot:head(subtitulo)>
+        <div class="text-nowrap">Mercado Hidrogruas</div>
+      </template>
+
       <template v-slot:head()="scope">
         <div class="text-nowrap">{{ scope.label }}</div>
       </template>
@@ -23,9 +36,17 @@ export default {
     return {
       stickyHeader: true,
       noCollapse: false,
+      years: [
+         2015,
+         2016,
+         2017,
+         2018,
+         2019
+        
+      ],
       fields: [
         {
-          key: "MERCADO_Hidrogruas",
+          key: "subtitulo",
           stickyColumn: true,
           isRowHeader: true,
           variant: "dark"
@@ -36,7 +57,12 @@ export default {
         "Abril",
         "Mayo",
         "Junio",
-        { key: "Acc Sem", stickyColumn: false, variant: "primary" },
+        {
+          key: "Acc Sem",
+          stickyColumn: false,
+          isRowHeader: false,
+          variant: "primary"
+        },
         "Julio",
         "Agosto",
         "Septiembre",
@@ -48,7 +74,7 @@ export default {
       ],
       items: [
         {
-          MERCADO_Hidrogruas: "Volúmen (uds)",
+          subtitulo: "Volúmen (uds)",
           Enero: 28,
           Febrero: 20,
           Marzo: 56,
@@ -66,7 +92,7 @@ export default {
           TOTAL: 629
         },
         {
-          MERCADO_Hidrogruas: "Factura FOB (u$s 000)",
+          subtitulo: "Factura FOB (u$s 000)",
           Enero: 634,
           Febrero: 894,
           Marzo: 1201,
@@ -84,7 +110,7 @@ export default {
           TOTAL: 16196
         },
         {
-          MERCADO_Hidrogruas: "Factura CIF (u$s 000)",
+          subtitulo: "Factura CIF (u$s 000)",
           Enero: 659,
           Febrero: 920,
           Marzo: 1230,
@@ -108,6 +134,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.b-table-sticky-header, .table-responsive
-  // margin-bottom 3rem
+.b-table-sticky-header, .table-responsive {
+  font-size: 0.75rem;
+}
 </style>

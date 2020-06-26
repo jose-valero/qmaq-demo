@@ -1,9 +1,9 @@
 <template>
-  <footer class="footer-bar mt-5 bg-dark">
-    <hr class="my-5" />
+  <footer class="footer-bar mt-4 bg-dark">
+    <hr class="my-2" />
 
     <div class="row">
-      <div class="col-sm-6 mb-sm-0 mb-5">
+      <div class="col-sm-6 mb-sm-0">
         <FootLinks />
       </div>
       <div class="col-sm-6">

@@ -17,7 +17,7 @@ export default {
 
 <style lang="stylus">
 #app {
-  padding: 75px 0;
+  padding: 20px 0 75px 0;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

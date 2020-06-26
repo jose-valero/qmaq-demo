@@ -7,9 +7,9 @@
             src="@/assets/img/qmaq2.svg"
             alt="qmaq logo"
             width="100"
-            class="m-3"
+            class="mx-3"
           />
-          <span class="m-3 pt-2 ">{{ title }}</span>
+          <span class="mx-3 py-2 ">{{ title }}</span>
         </b-navbar-brand>
       </b-navbar>
     </div>

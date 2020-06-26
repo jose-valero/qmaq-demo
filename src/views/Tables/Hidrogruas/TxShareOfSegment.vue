@@ -3,12 +3,18 @@
     <b-table
       :sticky-header="stickyHeader"
       :no-border-collapse="noCollapse"
-      responsive
+      responsive="sm"
       :items="items"
       :fields="fields"
-      vertical
       small
+      striped
+      hover
+      class="text-center"
     >
+      <template v-slot:head(subtitulo)="">
+        <div class="text-nowrap">Share Of Segment SOS</div>
+      </template>
+
       <template v-slot:head()="scope">
         <div class="text-nowrap">{{ scope.label }}</div>
       </template>
@@ -25,7 +31,7 @@ export default {
       noCollapse: false,
       fields: [
         {
-          key: "Share_Of_Segment_SOS",
+          key: "subtitulo",
           stickyColumn: true,
           isRowHeader: true,
           variant: "dark"
@@ -48,7 +54,7 @@ export default {
       ],
       items: [
         {
-          Share_Of_Segment_SOS: "01. Chicas (<10 Tm)",
+          subtitulo: "01. Chicas (<10 Tm)",
           Enero: "32%",
           Febrero: "45%",
           Marzo: "55%",
@@ -66,7 +72,7 @@ export default {
           TOTAL: "62%"
         },
         {
-          Share_Of_Segment_SOS: "02. Mediana Chica (>10 <20 Tm)",
+          subtitulo: "02. Mediana Chica (>10 <20 Tm)",
           Enero: "63%",
           Febrero: "54%",
           Marzo: "12%",
@@ -84,7 +90,7 @@ export default {
           TOTAL: "23%"
         },
         {
-          Share_Of_Segment_SOS: "02. Mediana Grande (>20 <33 Tm)",
+          subtitulo: "02. Mediana Grande (>20 <33 Tm)",
           Enero: "63%",
           Febrero: "54%",
           Marzo: "12%",
@@ -102,7 +108,7 @@ export default {
           TOTAL: "23%"
         },
         {
-          Share_Of_Segment_SOS: "03. Grande (>33 Tm)",
+          subtitulo: "03. Grande (>33 Tm)",
           Enero: "63%",
           Febrero: "54%",
           Marzo: "12%",
@@ -124,3 +130,8 @@ export default {
   }
 };
 </script>
+<style lang="stylus" scoped>
+.b-table-sticky-header, .table-responsive {
+  font-size: 0.75rem;
+}
+</style>

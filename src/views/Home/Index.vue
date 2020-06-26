@@ -3,9 +3,7 @@
     <HomeTitle />
     <TxTotales />
     <TxShareOfSegment />
-    <TxShareOfSegment />
-    <TxShareOfSegment />
-    <b-button class="m-4" justify="center" variant="dark">Hidrogruas</b-button>
+    <!-- <b-button class="m-4" justify="center" variant="dark">Hidrogruas</b-button> -->
   </div>
 </template>
 
@@ -23,3 +21,4 @@ export default {
   }
 };
 </script>
+<style lang="stylus" scoped></style>
