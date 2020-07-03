@@ -1,6 +1,6 @@
 <template>
   <b-dropdown
-    text="Categoria-Tabla"
+    text="Categoría de costos"
     block
     split
     split-variant="outline-primary"
