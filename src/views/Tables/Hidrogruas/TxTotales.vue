@@ -15,7 +15,7 @@
     >
       <template v-slot:thead-top>
         <div></div>
-        <b-th variant="primary" colspan="15"  >{{ years }}</b-th>
+        <b-th variant="primary" colspan="15">{{ years }}</b-th>
       </template>
 
       <template v-slot:head(subtitulo)>
@@ -36,14 +36,7 @@ export default {
     return {
       stickyHeader: true,
       noCollapse: false,
-      years: [
-         2015,
-         2016,
-         2017,
-         2018,
-         2019
-        
-      ],
+      years: [2015, 2016, 2017, 2018, 2019],
       fields: [
         {
           key: "subtitulo",
@@ -136,5 +129,9 @@ export default {
 <style lang="stylus" scoped>
 .b-table-sticky-header, .table-responsive {
   font-size: 0.75rem;
+}
+
+th, .table-dark, .b-table-sticky-column {
+  width: 50%;
 }
 </style>

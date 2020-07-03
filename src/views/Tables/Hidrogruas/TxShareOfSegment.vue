@@ -11,7 +11,7 @@
       hover
       class="text-center"
     >
-      <template v-slot:head(subtitulo)="">
+      <template v-slot:head(subtitulo)>
         <div class="text-nowrap">Share Of Segment SOS</div>
       </template>
 
@@ -130,8 +130,13 @@ export default {
   }
 };
 </script>
+
 <style lang="stylus" scoped>
 .b-table-sticky-header, .table-responsive {
   font-size: 0.75rem;
+}
+
+th, .table-dark, .b-table-sticky-column {
+  width: 100%;
 }
 </style>

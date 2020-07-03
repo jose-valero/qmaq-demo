@@ -16,6 +16,9 @@
     "bootstrap-vue": "^2.15.0",
     "core-js": "^3.6.5",
     "numeral": "^2.0.6",
+    "primeflex": "^2.0.0-rc.1",
+    "primeicons": "^4.0.0",
+    "primevue": "^2.0.0-rc.2",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
