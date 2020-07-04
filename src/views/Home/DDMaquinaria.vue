@@ -1,20 +1,27 @@
 <template>
-  <b-dropdown
-    text="Categoría de maquinaria"
-    block
-    split
-    split-variant="outline-primary"
-    variant="dark"
-    class="m-2"
-  >
-    <b-dropdown-item href="#">Hidrogruas</b-dropdown-item>
-    <b-dropdown-item href="#">Topadoras</b-dropdown-item>
-    <b-dropdown-item href="#">Something else here...</b-dropdown-item>
-  </b-dropdown>
+  <MultiSelect
+    v-model="selectedCities"
+    :options="cities"
+    optionLabel="name"
+    placeholder="Select a City"
+  />
 </template>
 
 <script>
 export default {
-  name: "DDMaquinaria"
+  name: "DDMaquinaria",
+  data() {
+    return {
+      selectedCities: null,
+      cities: [
+        { name: "New York", code: "NY" },
+        { name: "Rome", code: "RM" },
+        { name: "London", code: "LDN" },
+        { name: "Istanbul", code: "IST" },
+        { name: "Paris", code: "PRS" }
+      ]
+    };
+  }
 };
 </script>
+<style lang="stylus" scoped></style>

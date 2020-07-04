@@ -42,7 +42,8 @@ export default {
           key: "subtitulo",
           stickyColumn: true,
           isRowHeader: true,
-          variant: "dark"
+          variant: "danger",
+          with: 250
         },
         "Enero",
         "Febrero",
@@ -132,6 +133,6 @@ export default {
 }
 
 th, .table-dark, .b-table-sticky-column {
-  width: 50%;
+  width
 }
 </style>
