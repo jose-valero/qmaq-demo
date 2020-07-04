@@ -1,5 +1,5 @@
 <template>
-  <div class="container my-2 bg-warning">
+  <div class="container my-2">
     <h3 class="text-primary">Busqueda</h3>
     <div class="row my-2">
       <div class="col-6 ">
@@ -19,6 +19,8 @@
     </div>
 
     </div>
+    <TxTotales class="mt-3" />
+    <TxShareOfSegment />
   </div>
 </template>
 

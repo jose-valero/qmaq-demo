@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  // name: TxShareOfSegment,
+  name: "TxShareOfSegment",
   data() {
     return {
       stickyHeader: true,
@@ -131,12 +131,14 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 .b-table-sticky-header, .table-responsive {
   font-size: 0.75rem;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 
-th, .table-dark, .b-table-sticky-column {
-  width: 80%;
+th {
+  width : 80% !important;
 }
 </style>
