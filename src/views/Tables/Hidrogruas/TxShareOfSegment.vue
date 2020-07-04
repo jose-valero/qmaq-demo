@@ -137,6 +137,6 @@ export default {
 }
 
 th, .table-dark, .b-table-sticky-column {
-  width: 100%;
+  width: 80%;
 }
 </style>
