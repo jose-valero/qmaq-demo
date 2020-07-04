@@ -1,6 +1,6 @@
 <template>
   <b-dropdown
-    text="Categoria-Maquinaria"
+    text="Categoría de maquinaria"
     block
     split
     split-variant="outline-primary"

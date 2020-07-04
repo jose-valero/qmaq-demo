@@ -1,24 +1,33 @@
 <template>
-  <div class="home-view">
-    <div class="p-col-12 p-md-4">
-      <label for="periodo">periodo</label>
-      <Calendar
-        id="periodo"
-        :inline="true"
-        selectionMode="single || multiple || range"
-        v-model="date10"
-        view="month"
-        numberOfMonths
-        dateFormat="yy"
-        :yearNavigator="true"
-        yearRange="1990:2030"
-      />
-    </div>
+  <div class="rangoAños">
+    <label class="text-dark" for="periodo">{{ rango }}</label>
+    <Calendar
+      id="periodo"
+      class="p-4"
+      :inline="true"
+      v-model="value"
+      view="year"
+      dateFormat="yy"
+      :yearNavigator="true"
+      yearRange="2000:2030"
+    />
   </div>
 </template>
 
 <script>
 export default {
-  name: "calendar"
+  name: "calendar",
+  props: ["rango"]
 };
 </script>
+
+<style lang="stylus">
+.p-datepicker-month {
+  color: red;
+  display: none;
+}
+
+.p-datepicker-header button {
+  display: none;
+}
+</style>
