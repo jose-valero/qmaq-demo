@@ -1,17 +1,22 @@
 <template>
-  <div class="container my-3">
-    <h3 class="text-danger">Filtro:</h3>
-    <div class="row">
-      <div class="col-6 bg-warning">
+  <div class="container my-2 bg-warning">
+    <h3 class="text-primary">Busqueda</h3>
+    <div class="row my-2">
+      <div class="col-6">
         <calendar rango="Desde: " />
         <DDCategoria />
       </div>
-      <div class="col-6 bg-warning">
+      <div class="col-6">
         <calendar rango="Hasta: " />
         <DDMaquinaria />
       </div>
       <!-- <TxTotales class="mt-3" />
-      <TxShareOfSegment /> -->
+      <TxShareOfSegment />-->
+    </div>
+    <div class="submit">
+      <div class="row mx-3 py-3">
+        <Button label="Buscar" class="p-button-raised p-button-secondary" />
+      </div>
     </div>
   </div>
 </template>
@@ -29,9 +34,14 @@ export default {
   components: {
     Calendar,
     DDMaquinaria,
-    DDCategoria,
+    DDCategoria
     // TxTotales,
     // TxShareOfSegment
   }
 };
 </script>
+
+<style lang="stylus">
+
+</style>
+

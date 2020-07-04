@@ -1,10 +1,13 @@
 <template>
-  <Dropdown
-    v-model="selectedCity"
-    :options="cities"
-    optionLabel="name"
-    placeholder="Categoria"
-  />
+  <div class="cat">
+    <Dropdown
+      v-model="selectedCity"
+      :options="cities"
+      optionLabel="name"
+      placeholder="Categoria"
+      class
+    />
+  </div>
 </template>
 
 <script>
@@ -24,4 +27,23 @@ export default {
   }
 };
 </script>
-<style lang="stylus" scoped></style>
+<style lang="stylus">
+.cat {
+  text-align: center;
+}
+
+.p-dropdown .p-dropdown-label.p-placeholder {
+  font-size: 1rem;
+  line-height: 0.5rem;
+  margin-bottom 0
+  
+}
+
+.p-dropdown .p-dropdown-label {
+  padding-right: 1rem;
+}
+
+.p-dropdown.p-component {
+  margin-bottom: 10px;
+}
+</style>

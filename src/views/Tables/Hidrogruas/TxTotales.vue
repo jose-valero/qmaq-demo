@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  // name: TxTotales,
+   name: "TxTotales",
   data() {
     return {
       stickyHeader: true,

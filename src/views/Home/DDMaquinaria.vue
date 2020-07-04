@@ -1,10 +1,12 @@
 <template>
-  <MultiSelect
-    v-model="selectedCities"
-    :options="cities"
-    optionLabel="name"
-    placeholder="Select a City"
-  />
+  <div class="maq">
+    <MultiSelect
+      v-model="selectedCities"
+      :options="cities"
+      optionLabel="name"
+      placeholder="Select a City"
+    />
+  </div>
 </template>
 
 <script>
@@ -24,4 +26,22 @@ export default {
   }
 };
 </script>
-<style lang="stylus" scoped></style>
+<style lang="stylus">
+.maq {
+  text-align: center;
+}
+
+.p-multiselect .p-multiselect-label.p-placeholder {
+  font-size: 1rem;
+  line-height: 0.5rem;
+  margin-bottom 0
+}
+
+.p-multiselect .p-multiselect-label {
+  padding-right: 1rem;
+}
+
+.p-multiselect.p-component {
+  margin-bottom: 10px;
+}
+</style>

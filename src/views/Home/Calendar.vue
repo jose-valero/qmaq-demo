@@ -1,9 +1,9 @@
 <template>
-  <div class="rangoAños">
-    <label class="text-dark" for="periodo">{{ rango }}</label>
+  <div class="rango">
+    <label class="text-dark mx-1" for="periodo">{{ rango }}</label>
     <Calendar
       id="periodo"
-      class="p-4"
+      class=" px-0 py-2"
       :inline="true"
       v-model="value"
       view="year"
@@ -22,12 +22,18 @@ export default {
 </script>
 
 <style lang="stylus">
-.p-datepicker-month {
-  color: red;
-  display: none;
-}
+.p-datepicker.p-component.p-datepicker-inline
+  padding 0 0 0 0
+  font-size 0.75rem
 
-.p-datepicker-header button {
-  display: none;
-}
+.p-datepicker-month
+  display none
+
+.p-datepicker-header button
+  display none
+
+.rango 
+  text-align center
+  font-size 0.75rem
+
 </style>
