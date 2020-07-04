@@ -10,7 +10,7 @@
         <DDCategoria />
       </div>
       <TxTotales class="mt-3" />
-      
+
       <TxShareOfSegment />
     </div>
   </div>
