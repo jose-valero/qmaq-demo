@@ -10,9 +10,15 @@
       striped
       hover
       class="text-center"
+      head-row-variant="dark"
     >
+      <template v-slot:thead-top>
+        <div></div>
+        <b-th variant="dark text-center" colspan="15">2015</b-th>
+      </template>
+
       <template v-slot:head(subtitulo)>
-        <div class="text-nowrap" style="background: orange">Share Of Segment SOS</div>
+        <div class="text-nowrap">Share Of Segment SOS</div>
       </template>
 
       <template v-slot:head()="scope">
@@ -33,7 +39,7 @@ export default {
         {
           key: "subtitulo",
           stickyColumn: true,
-          isRowHeader: true,
+          isRowHeader: true
         },
         "Enero",
         "Febrero",
@@ -138,6 +144,8 @@ export default {
 }
 
 th {
-  width : 80% !important;
+  width: 80% !important;
 }
+
+
 </style>

@@ -12,14 +12,15 @@
       hover
       caption-top
       class="text-center"
+      head-row-variant="dark"
     >
       <template v-slot:thead-top>
         <div></div>
-        <b-th variant="primary text-center" colspan="15">2015</b-th>
+        <b-th variant="dark text-center" colspan="15">2015</b-th>
       </template>
 
       <template v-slot:head(subtitulo)>
-        <div class="text-nowrap" style="background: orangered">Mercado Hidrogruas</div>
+        <div class="text-nowrap text-light">Mercado Hidrogruas</div>
       </template>
 
       <template v-slot:head()="scope">
@@ -31,7 +32,7 @@
 
 <script>
 export default {
-   name: "TxTotales",
+  name: "TxTotales",
   data() {
     return {
       stickyHeader: true,
@@ -41,8 +42,7 @@ export default {
         {
           key: "subtitulo",
           stickyColumn: true,
-          isRowHeader: true,
-          with: 250
+          isRowHeader: true
         },
         "Enero",
         "Febrero",
@@ -132,7 +132,14 @@ export default {
   margin-right: -15px;
   margin-left: -15px;
 }
+
 th {
-  width : 80% !important;
+  width: 80% !important;
 }
+
+.b-table-sticky-column.table-dark {
+  background-color: red ;
+}
+
+
 </style>
