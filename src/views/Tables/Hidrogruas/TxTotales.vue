@@ -15,7 +15,7 @@
     >
       <template v-slot:thead-top>
         <div></div>
-        <b-th variant="primary text-center" colspan="15">{{ 2020 }}</b-th>
+        <b-th variant="primary text-center" colspan="15">2015</b-th>
       </template>
 
       <template v-slot:head(subtitulo)>
