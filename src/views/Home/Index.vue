@@ -1,22 +1,29 @@
 <template>
-  <div class="container my-2">
-    <h3 class="text-primary">Busqueda</h3>
-    <div class="containerFiltro row my-2 bg-warning d-flex justify-content-center">
-      <div class="col-6">
-        <calendar rango="Desde: " />
-        <DDCategoria />
+  <div class="container mt-2">
+        <div class="row"><h3 class="text-dark m-0 p-0">BUSQUEDA DE DATOS ANUALES</h3></div>
+    <nav class="row navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <calendar rango="DESDE" />
+          </li>
+          <li class="nav-item ml-5">
+            <calendar rango="HASTA" />
+          </li>
+          <li class="nav-item dropdown ml-5">
+            <DDCategoria />
+          </li>
+          <li class="nav-item ml-5">
+            <DDMaquinaria />
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <button type="button" class="btn btnBuscar">Buscar</button>
+        </form>
       </div>
-      <div class="col-6">
-        <calendar rango="Hasta: " />
-        <DDMaquinaria />
-      </div>
-      <div class="submit">
-        <div class="row mx-3 py-3">
-          <Button label="Buscar" class="p-button-raised p-button-secondary" />
-        </div>
-      </div>
-    </div>
-    <TxTotales class="mt-3" />
+    </nav>
+
+    <TxTotales class="mt-5" />
     <TxShareOfSegment />
   </div>
 </template>
@@ -42,6 +49,29 @@ export default {
 </script>
 
 <style lang="stylus">
+  .containerFiltro {
+    background-color: red;
+  }
+  .filtro {
+    background : yellowgreen;
+    height : inherit;
+    margin-bottom : 10px
+
+  }
+  .btnBuscar {
+    background : #eb3e05;
+    height: auto;
+  }
+    .navbar{
+      font-size 0.75rem;
+      height : 40px;
+      box-sizing: border-box;
+    }
+  li {
+    background :yellowgreen;
+    height : inherit;
+    justify-self : center;
+  }
 
 </style>
 

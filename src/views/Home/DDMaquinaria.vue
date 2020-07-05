@@ -1,10 +1,12 @@
 <template>
   <div class="maq">
+    <label class="text-dark mb-0 mr-2">TABLA RESULTADO</label>
     <MultiSelect
       v-model="selectedCities"
       :options="cities"
       optionLabel="name"
-      placeholder="Select a City"
+      placeholder=""
+      class="bg-light rounded-0 "
     />
   </div>
 </template>
@@ -40,8 +42,7 @@ export default {
 .p-multiselect .p-multiselect-label {
   padding-right: 1rem;
 }
-
-.p-multiselect.p-component {
-  margin-bottom: 10px;
-}
+  .p-multiselect-trigger-icon {
+    color :black;
+  }
 </style>

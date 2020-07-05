@@ -12,7 +12,7 @@
       class="text-center"
     >
       <template v-slot:head(subtitulo)>
-        <div class="text-nowrap">Share Of Segment SOS</div>
+        <div class="text-nowrap" style="background: orange">Share Of Segment SOS</div>
       </template>
 
       <template v-slot:head()="scope">
@@ -34,7 +34,6 @@ export default {
           key: "subtitulo",
           stickyColumn: true,
           isRowHeader: true,
-          variant: "dark"
         },
         "Enero",
         "Febrero",

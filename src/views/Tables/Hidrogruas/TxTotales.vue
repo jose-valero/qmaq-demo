@@ -19,7 +19,7 @@
       </template>
 
       <template v-slot:head(subtitulo)>
-        <div class="text-nowrap">Mercado Hidrogruas</div>
+        <div class="text-nowrap" style="background: orangered">Mercado Hidrogruas</div>
       </template>
 
       <template v-slot:head()="scope">
@@ -42,7 +42,6 @@ export default {
           key: "subtitulo",
           stickyColumn: true,
           isRowHeader: true,
-          variant: "dark",
           with: 250
         },
         "Enero",

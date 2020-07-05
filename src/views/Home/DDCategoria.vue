@@ -1,11 +1,12 @@
 <template>
   <div class="cat">
+    <label class="text-dark mb-0 mr-2">CATEGORIA DE MAQUINARIA</label>
     <Dropdown
       v-model="selectedCity"
       :options="cities"
       optionLabel="name"
-      placeholder="Categoria"
-      class
+      placeholder=""
+      class="bg-light rounded-0"
     />
   </div>
 </template>
@@ -45,5 +46,13 @@ export default {
 
 .p-dropdown.p-component {
   margin-bottom: 10px;
+}
+  .p-dropdown {
+    margin-bottom : 0!important;
+    justify-items : center;
+    height : 18 px;
+  }
+.p-dropdown-trigger-icon {
+  color : black;
 }
 </style>

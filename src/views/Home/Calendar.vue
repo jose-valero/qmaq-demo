@@ -25,6 +25,8 @@ export default {
 .p-datepicker.p-component.p-datepicker-inline
   padding 0 0 0 0
   font-size 0.75rem
+  border : none !important;
+
 
 .p-datepicker-month
   display none
@@ -32,8 +34,18 @@ export default {
 .p-datepicker-header button
   display none
 
-.rango 
-  text-align center
-  font-size 0.75rem
+.rango {
+  height : inherit;
+}
+  .p-datepicker-header {
+    padding: 0 !important;
+    border : none !important;
+  }
+  .p-datepicker-year {
+    width : 150% !important;
+  }
+  .p-datepicker-header {
+
+  }
 
 </style>
