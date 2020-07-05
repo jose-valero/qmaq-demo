@@ -20,7 +20,7 @@
       </template>
 
       <template v-slot:head(subtitulo)>
-        <div class="text-nowrap text-light">Mercado Hidrogruas</div>
+        <div class="text-nowrap subcategoriaMaquinaria">Mercado Hidrogruas</div>
       </template>
 
       <template v-slot:head()="scope">
@@ -136,10 +136,14 @@ export default {
 th {
   width: 80% !important;
 }
-
-.b-table-sticky-column.table-dark {
-  background-color: red ;
+.subcategoriaMaquinaria {
+  background-color: orangered;
+  color : white
 }
-
+.table-dark th{
+    background-color: #B3B3B3 !important;
+    color : black !important
+    border-top : none !important
+  }
 
 </style>

@@ -14,11 +14,11 @@
     >
       <template v-slot:thead-top>
         <div></div>
-        <b-th variant="dark text-center" colspan="15">2015</b-th>
+<!--        <b-th variant="dark text-center" colspan="15">2015</b-th>-->
       </template>
 
       <template v-slot:head(subtitulo)>
-        <div class="text-nowrap">Share Of Segment SOS</div>
+        <div class="text-nowrap subcategoria">Share Of Segment SOS</div>
       </template>
 
       <template v-slot:head()="scope">
@@ -142,10 +142,9 @@ export default {
   margin-right: -15px;
   margin-left: -15px;
 }
-
-th {
-  width: 80% !important;
+.subcategoria {
+  background-color: orange
+  color : white
 }
-
 
 </style>
