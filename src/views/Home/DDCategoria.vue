@@ -36,7 +36,6 @@ export default {
 .p-dropdown .p-dropdown-label.p-placeholder {
   font-size: 1rem;
   line-height: 0.5rem;
-  margin-bottom 0
   
 }
 
@@ -50,9 +49,20 @@ export default {
   .p-dropdown {
     margin-bottom : 0!important;
     justify-items : center;
-    height : 18 px;
+    height : 20px;
+    padding : 0
   }
 .p-dropdown-trigger-icon {
   color : black;
 }
+  .cat label {
+    vertical-align : middle;
+    margin-bottom: 1px;
+  }
+.p-dropdown-label {
+  color: black!important;
+  font-size: .9rem !important;
+  line-height: 0;
+}
+
 </style>

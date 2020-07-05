@@ -1,29 +1,27 @@
 <template>
-  <div class="container mt-2">
-        <div class="row"><h3 class="text-dark m-0 p-0">BUSQUEDA DE DATOS ANUALES</h3></div>
-    <nav class="row navbar navbar-expand-lg navbar-light bg-light">
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
+  <div class="container bg-light">
+        <div class="row"><h5 class="text-dark m-0 p-0 mt-3">BUSQUEDA DE DATOS ANUALES</h5></div>
+    <nav class="row navbarFiltro navbar-expand mt-3">
+        <ul class="navbar-nav">
+          <li class="nav-item ml-0">
             <calendar rango="DESDE" />
           </li>
-          <li class="nav-item ml-5">
+          <li class="nav-item mr-1">
             <calendar rango="HASTA" />
           </li>
-          <li class="nav-item dropdown ml-5">
+          <li class="nav-item ml-5">
             <DDCategoria />
           </li>
           <li class="nav-item ml-5">
             <DDMaquinaria />
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <button type="button" class="btn btnBuscar">Buscar</button>
+        <form class="form-inline my-lg-0">
+          <button type="button" class="btn btnBuscar ml-5">BUSCAR</button>
         </form>
-      </div>
     </nav>
 
-    <TxTotales class="mt-5" />
+    <TxTotales class="mt-4" />
     <TxShareOfSegment />
   </div>
 </template>
@@ -49,28 +47,28 @@ export default {
 </script>
 
 <style lang="stylus">
-  .containerFiltro {
-    background-color: red;
-  }
-  .filtro {
-    background : yellowgreen;
-    height : inherit;
-    margin-bottom : 10px
-
-  }
   .btnBuscar {
-    background : #eb3e05;
-    height: auto;
+    background-image: linear-gradient(to left bottom, #b5a605, #c59200, #d47a00, #e25b00, #ee2d04);
+    font-size: 0.9rem;
+    padding : 10px
+    line-height : 3px;
+    border : none
+    font-weight: bold;
+    vertical-align : center
+    height : 18px
+    margin-bottom : 1px;
   }
-    .navbar{
+    .navbarFiltro{
+      font-weight: bold;
+      margin-top : 3%;
       font-size 0.75rem;
-      height : 40px;
       box-sizing: border-box;
+      padding :0
     }
-  li {
-    background :yellowgreen;
-    height : inherit;
-    justify-self : center;
+  ul li {
+   margin-left : 80px;
+
+    vertical-align :top;
   }
 
 </style>

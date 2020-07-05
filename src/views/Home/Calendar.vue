@@ -3,7 +3,6 @@
     <label class="text-dark mx-1" for="periodo">{{ rango }}</label>
     <Calendar
       id="periodo"
-      class=" px-0 py-2"
       :inline="true"
       v-model="value"
       view="year"
@@ -43,9 +42,15 @@ export default {
   }
   .p-datepicker-year {
     width : 150% !important;
+    height : 20px !important;
+    border : 1px solid black
+
   }
   .p-datepicker-header {
 
   }
-
+.rango label {
+  vertical-align: middles;
+  margin-bottom: 0;
+}
 </style>

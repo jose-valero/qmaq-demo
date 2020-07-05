@@ -38,11 +38,21 @@ export default {
   line-height: 0.5rem;
   margin-bottom 0
 }
-
-.p-multiselect .p-multiselect-label {
-  padding-right: 1rem;
-}
   .p-multiselect-trigger-icon {
     color :black;
   }
+.p-multiselect-label-container {
+    height : 18px
+    /*vertical-align : top;*/
+    padding: none;
+}
+.maq label {
+    vertical-align: middle;
+}
+    .p-multiselect-label {
+        color: black!important;
+        font-size: .9rem;
+        line-height: 0;
+    }
+
 </style>
