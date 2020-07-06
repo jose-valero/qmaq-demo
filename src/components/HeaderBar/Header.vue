@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: "HeaderBar",
+  name: "Header",
   data() {
     return {
       title: "Resultados"

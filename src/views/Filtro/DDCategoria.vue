@@ -17,14 +17,19 @@ export default {
   data() {
     return {
       selectedCity: null,
-      cities: [
-        { name: "asd1", code: "a1" },
-        { name: "asd2", code: "a2" },
-        { name: "asd3", code: "a3" },
-        { name: "asd4", code: "a4" },
-        { name: "asd5", code: "a5" }
-      ]
+      cities: []
     };
+  },
+  created() {
+    fetch("http://localhost:8080/file_uploader/tipomaquinaria").then(
+      response => {
+        response.json().then(maquinarias => {
+          console.log(maquinarias);
+          this.cities = [];
+          maquinarias.forEach(maquinaria => this.cities.push({ name: maquinaria, code: "a1" }))
+        });
+      }
+    );
   }
 };
 </script>
@@ -36,7 +41,7 @@ export default {
 .p-dropdown .p-dropdown-label.p-placeholder {
   font-size: 1rem;
   line-height: 0.5rem;
-  
+
 }
 
 .p-dropdown .p-dropdown-label {

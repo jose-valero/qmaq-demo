@@ -17,12 +17,11 @@
           </li>
         </ul>
         <form class="form-inline my-lg-0">
-          <button type="button" class="btn btnBuscar ml-5">BUSCAR</button>
+          <button v-on:click=DDMaquinaria.datosFiltro()  type="button" class="btn btnBuscar ml-5">BUSCAR</button>
         </form>
     </nav>
 
-    <TxTotales class="mt-4" />
-    <TxShareOfSegment />
+    <ResultTables class="mt-4" />
   </div>
 </template>
 
@@ -31,17 +30,15 @@ import Calendar from "./Calendar";
 
 import DDMaquinaria from "./DDMaquinaria";
 import DDCategoria from "./DDCategoria";
-import TxTotales from "../Tables/Hidrogruas/TxTotales";
-import TxShareOfSegment from "../Tables/Hidrogruas/TxShareOfSegment";
+import ResultTables from "../Tables/ResultTables";
 
 export default {
-  name: "Home",
+  name: "ResultFiltro",
   components: {
     Calendar,
     DDMaquinaria,
     DDCategoria,
-    TxTotales,
-    TxShareOfSegment
+    ResultTables
   }
 };
 </script>

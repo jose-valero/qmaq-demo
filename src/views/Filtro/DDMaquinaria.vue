@@ -17,14 +17,25 @@ export default {
   data() {
     return {
       selectedCities: null,
-      cities: [
-        { name: "New York", code: "NY" },
-        { name: "Rome", code: "RM" },
-        { name: "London", code: "LDN" },
-        { name: "Istanbul", code: "IST" },
-        { name: "Paris", code: "PRS" }
-      ]
+      cities: []
     };
+  },
+  created() {
+    fetch("http://localhost:8080/file_uploader/getsubcategorias").then(
+            response => {
+              response.json().then(maquinarias => {
+                console.log(maquinarias);
+                this.cities = []
+          maquinarias.forEach(maquinaria =>
+            this.cities.push({ name: maquinaria, code: "a1" }))
+              });
+            }
+    );
+  },
+  methods: {
+    datosFiltro() {
+      console.log(this.selectedCities);
+    }
   }
 };
 </script>
@@ -43,7 +54,6 @@ export default {
   }
 .p-multiselect-label-container {
     height : 18px
-    /*vertical-align : top;*/
     padding: none;
 }
 .maq label {

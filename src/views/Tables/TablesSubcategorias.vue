@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: "TxShareOfSegment",
+  name: "TablesSubcategorias",
   data() {
     return {
       stickyHeader: true,
