@@ -16,7 +16,12 @@
 <script>
 export default {
   name: "calendar",
-  props: ["rango"]
+  props: ["rango"],
+  data() {
+    return {
+      value: null
+    };
+  }
 };
 </script>
 
