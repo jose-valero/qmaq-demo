@@ -22,14 +22,15 @@ export default {
   },
   created() {
     fetch("http://localhost:8080/file_uploader/getsubcategorias").then(
-            response => {
-              response.json().then(maquinarias => {
-                console.log(maquinarias);
-                this.cities = []
+      response => {
+        response.json().then(maquinarias => {
+          console.log(maquinarias);
+          this.cities = [];
           maquinarias.forEach(maquinaria =>
-            this.cities.push({ name: maquinaria, code: "a1" }))
-              });
-            }
+            this.cities.push({ name: maquinaria, code: "a1" })
+          );
+        });
+      }
     );
   },
   methods: {
@@ -64,5 +65,4 @@ export default {
         font-size: .9rem;
         line-height: 0;
     }
-
 </style>

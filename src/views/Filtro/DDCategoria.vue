@@ -26,7 +26,9 @@ export default {
         response.json().then(maquinarias => {
           console.log(maquinarias);
           this.cities = [];
-          maquinarias.forEach(maquinaria => this.cities.push({ name: maquinaria, code: "a1" }))
+          maquinarias.forEach(maquinaria =>
+            this.cities.push({ name: maquinaria, code: "a1" })
+          );
         });
       }
     );
@@ -69,5 +71,4 @@ export default {
   font-size: .9rem !important;
   line-height: 0;
 }
-
 </style>
