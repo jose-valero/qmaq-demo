@@ -2,9 +2,11 @@
   <div class="cat">
     <label class="text-dark mb-0 mr-2">CATEGORIA DE MAQUINARIA</label>
     <Dropdown
-      v-model="selectedCity"
-      :options="cities"
+      :filter="true"
+      v-model="maquinaria"
+      :options="maquinarias"
       optionLabel="name"
+      v-on:change="maquinariaChange"
       placeholder=""
       class="bg-light rounded-0"
     />
@@ -16,20 +18,28 @@ export default {
   name: "DDCategoria",
   data() {
     return {
-      selectedCity: null,
-      cities: []
+      maquinaria : null,
+      selectedMaquinaria: "",
+      maquinarias: []
     };
   },
   created() {
     fetch("http://localhost:8080/file_uploader/tipomaquinaria").then(
       response => {
         response.json().then(maquinarias => {
-          console.log(maquinarias);
-          this.cities = [];
-          maquinarias.forEach(maquinaria => this.cities.push({ name: maquinaria, code: "a1" }))
+          this.maquinarias = [];
+          maquinarias.forEach(maquinaria =>
+            this.maquinarias.push({ name: maquinaria, code: "a1" })
+          );
         });
       }
     );
+  },
+  methods: {
+    maquinariaChange(evt) {
+      this.selectedMaquinaria = evt.value.name;
+      console.log(this.selectedMaquinaria);
+    }
   }
 };
 </script>
@@ -69,5 +79,4 @@ export default {
   font-size: .9rem !important;
   line-height: 0;
 }
-
 </style>

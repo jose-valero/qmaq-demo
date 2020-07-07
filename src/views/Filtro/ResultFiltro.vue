@@ -17,7 +17,7 @@
           </li>
         </ul>
         <form class="form-inline my-lg-0">
-          <button v-on:click=DDMaquinaria.datosFiltro()  type="button" class="btn btnBuscar ml-5">BUSCAR</button>
+          <button v-on:click="verCategoria()"  type="button" class="btn btnBuscar ml-5">BUSCAR</button>
         </form>
     </nav>
 
