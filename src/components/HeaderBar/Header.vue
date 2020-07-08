@@ -14,12 +14,12 @@
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
-            <router-link :to="{ name: 'home' }" class="active">
+            <router-link :to="{ name: 'Home' }" class="active">
               <span class="text-light mx-5">Adjuntar Archivo</span>
             </router-link>
 
             <router-link :to="{ name: 'Filtro' }" class="active">
-              <span class="text-light mx-5">Visualizar Tablas</span>
+              <span class="text-light mx-5">Visualizar Tabla</span>
             </router-link>
           </b-navbar-nav>
         </b-collapse>
