@@ -35,14 +35,7 @@ export default {
   },
   methods: {
     subcategoriaChange(evt) {
-      evt.value.forEach(subCat => {
-        if (
-          !this.selectedSubcategoria.includes(subCat.name) &&
-          this.selectedSubcategoria !== undefined
-        ) {
-          this.selectedSubcategoria.push(subCat.name);
-        }
-      });
+      this.selectedSubcategoria = evt.value;
       console.log(this.selectedSubcategoria)
     }
   }

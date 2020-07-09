@@ -9,6 +9,7 @@
       dateFormat="yy"
       :yearNavigator="true"
       yearRange="2000:2030"
+      v-on:year-change="dateSelect"
     />
   </div>
 </template>
@@ -19,8 +20,14 @@ export default {
   props: ["rango"],
   data() {
     return {
-      value: null
+      value: "",
+      context: null
     };
+  },
+  methods: {
+    dateSelect(e) {
+      console.log(e.year);
+    }
   }
 };
 </script>
