@@ -3,7 +3,9 @@
     <div class="p-col p-shadow-2 p-m-2">
       <div class="p-mx-6 p-my-4">
         <h5 class="p-text-bold">ARCHIVOS DE ADUANA</h5>
-        <h6 class="p-text-bold">DESDE ESTA APLICACION PODRA SUBIR ARCHIVOS CORRESPONDIENTES AL AFIP</h6>
+        <h6 class="p-text-bold">
+          DESDE ESTA APLICACION PODRA SUBIR ARCHIVOS CORRESPONDIENTES AL AFIP
+        </h6>
         <FileUpload
           name="myfile"
           url="./"
@@ -17,7 +19,7 @@
           type="file"
         >
           <template #empty>
-            <p>Drag and drop files to here to upload.</p>
+            <p v-if="val">Archivo cargado Exitosamente</p>
           </template>
         </FileUpload>
       </div>
@@ -28,11 +30,19 @@
 export default {
   name: "home",
 
+  data() {
+    return {
+      val: false
+    };
+  },
+
   components: {},
 
+  watch: {},
+
   methods: {
-    onUpload(evt) {
-      console.log(evt, "hola")
+    onUpload() {
+      this.val = true;
     }
   }
 };

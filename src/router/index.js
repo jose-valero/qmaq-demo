@@ -13,9 +13,10 @@ const routes = [
   },
   {
     path: "/",
-    name: "Home",
+    name: "adjuntar",
     component: Home
   },
+  
   
 ];
 

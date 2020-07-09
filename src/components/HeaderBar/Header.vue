@@ -8,14 +8,13 @@
             alt="qmaq logo"
             width="80"
             class="mx-2"
-            
           />
         </b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
-            <router-link :to="{ name: 'Home' }" class="active">
+            <router-link :to="{ name: 'adjuntar' }" class="active">
               <span class="text-light mx-5">Adjuntar Archivo</span>
             </router-link>
 

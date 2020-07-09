@@ -1,5 +1,5 @@
 import Vue from "vue";
-import VueResource from 'vue-resource';
+import VueResource from "vue-resource";
 
 // BootstrapVue
 import "./plugins/bootstrapVue";
