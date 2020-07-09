@@ -5,9 +5,9 @@
         <h5 class="p-text-bold">ARCHIVOS DE ADUANA</h5>
         <h6 class="p-text-bold">DESDE ESTA APLICACION PODRA SUBIR ARCHIVOS CORRESPONDIENTES AL AFIP</h6>
         <FileUpload
-          name="demo[]"
+          name="myfile"
           url="./"
-          @upload="myUploader"
+          v-on:before-upload="onUpload"
           :multiple="true"
           accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
           :maxFileSize="1000000"
@@ -15,15 +15,26 @@
           uploadLabel="Guardar"
           cancelLabel="Cancel"
           type="file"
-        />
+        >
+          <template #empty>
+            <p>Drag and drop files to here to upload.</p>
+          </template>
+        </FileUpload>
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
-  // myUploader(event) {
-  //event.files == files to upload
+  name: "home",
+
+  components: {},
+
+  methods: {
+    onUpload(evt) {
+      console.log(evt, "hola")
+    }
+  }
 };
 </script>
 

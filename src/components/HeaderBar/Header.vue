@@ -8,6 +8,7 @@
             alt="qmaq logo"
             width="80"
             class="mx-2"
+            
           />
         </b-navbar-brand>
 
