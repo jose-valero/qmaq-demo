@@ -12,10 +12,11 @@ const routes = [
     component: ResultFiltro
   },
   {
-    path: "/home",
-    name: "Home",
+    path: "/",
+    name: "adjuntar",
     component: Home
   },
+  
   
 ];
 
