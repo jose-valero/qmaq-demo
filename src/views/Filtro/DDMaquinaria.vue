@@ -17,12 +17,13 @@ export default {
   name: "DDMaquinaria",
   data() {
     return {
-      subcategoria : null,
+      subcategoria: null,
       selectedSubcategoria: [],
       cities: []
     };
   },
   created() {
+    console.time("juantime");
     fetch("http://localhost:8080/file_uploader/getsubcategorias").then(
             response => {
               response.json().then(maquinarias => {
@@ -32,11 +33,14 @@ export default {
               });
             }
     );
+    console.timeEnd("juantime");
   },
   methods: {
-    subcategoriaChange(evt) {
-      this.selectedSubcategoria = evt.value;
-      console.log(this.selectedSubcategoria)
+    subcategoriaChange() {
+      const arrayValues = this.subcategoria.map(v => {
+        return v.name;
+      });
+      this.$emit('subcategoriaSeleccionada', arrayValues);
     }
   }
 };

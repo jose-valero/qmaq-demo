@@ -33,12 +33,13 @@ export default {
           );
         });
       }
+
     );
   },
   methods: {
     maquinariaChange(evt) {
       this.selectedMaquinaria = evt.value.name;
-      console.log(this.selectedMaquinaria);
+      this.$emit('maquinaSeleccionada', this.selectedMaquinaria);
     }
   }
 };
