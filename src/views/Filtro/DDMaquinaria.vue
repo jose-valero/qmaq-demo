@@ -2,9 +2,10 @@
   <div class="maq">
     <label class="text-dark mb-0 mr-2">TABLA RESULTADO</label>
     <MultiSelect
-      v-model="selectedCities"
+      v-model="subcategoria"
       :options="cities"
       optionLabel="name"
+      v-on:change="subcategoriaChange"
       placeholder=""
       class="bg-light rounded-0 "
     />
@@ -16,26 +17,30 @@ export default {
   name: "DDMaquinaria",
   data() {
     return {
-      selectedCities: null,
+      subcategoria: null,
+      selectedSubcategoria: [],
       cities: []
     };
   },
   created() {
+    console.time("juantime");
     fetch("http://localhost:8080/file_uploader/getsubcategorias").then(
-      response => {
-        response.json().then(maquinarias => {
-          console.log(maquinarias);
-          this.cities = [];
-          maquinarias.forEach(maquinaria =>
-            this.cities.push({ name: maquinaria, code: "a1" })
-          );
-        });
-      }
+            response => {
+              response.json().then(maquinarias => {
+                this.cities = []
+                maquinarias.forEach(maquinaria =>
+                        this.cities.push({name: maquinaria, code: "a1"}))
+              });
+            }
     );
+    console.timeEnd("juantime");
   },
   methods: {
-    datosFiltro() {
-      console.log(this.selectedCities);
+    subcategoriaChange() {
+      const arrayValues = this.subcategoria.map(v => {
+        return v.name;
+      });
+      this.$emit('subcategoriaSeleccionada', arrayValues);
     }
   }
 };
@@ -65,4 +70,5 @@ export default {
         font-size: .9rem;
         line-height: 0;
     }
+
 </style>

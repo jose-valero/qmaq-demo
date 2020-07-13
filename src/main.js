@@ -1,5 +1,4 @@
 import Vue from "vue";
-import VueResource from "vue-resource";
 
 // BootstrapVue
 import "./plugins/bootstrapVue";
@@ -12,10 +11,9 @@ import store from "./store";
 import "./assets/css/main.styl";
 
 // prime framework
-import "./plugins/primeVue.js"; //icons
+import "./plugins/primeVue.js"                        //icons
 
 Vue.config.productionTip = false;
-Vue.use(VueResource);
 
 new Vue({
   router,

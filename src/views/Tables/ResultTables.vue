@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <TableTotal />
-    <!--        <TablesSubcategorias/>-->
-  </div>
+    <div>
+        <TableTotal/>
+<!--        <TablesSubcategorias/>-->
+    </div>
 </template>
 
 <script>
@@ -12,7 +12,7 @@ import TableTotal from "./TableTotal";
 export default {
   name: "ResultTables",
   components: {
-    TableTotal
+      TableTotal,
     //TablesSubcategorias
   }
 };
