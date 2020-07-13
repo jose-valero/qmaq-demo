@@ -11,7 +11,7 @@ import store from "./store";
 import "./assets/css/main.styl";
 
 // prime framework
-import "./plugins/primeVue.js"; //icons
+import "./plugins/primeVue.js"                        //icons
 
 Vue.config.productionTip = false;
 

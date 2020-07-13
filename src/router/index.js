@@ -1,22 +1,22 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import ResultFiltro from "../views/Filtro/ResultFiltro.vue";
-import Home from "../views/Home/Home.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/filtro",
+    path: "/",
     name: "Filtro",
     component: ResultFiltro
   },
-  {
-    path: "/home",
-    name: "Home",
-    component: Home
-  },
-  
+  // {
+  //   // route level code-splitting
+  //   // this generates a separate chunk (about.[hash].js) for this route
+  //   // which is lazy-loaded when the route is visited.
+  //   component: () =>
+  //     import(")
+  // }
 ];
 
 const router = new VueRouter({
