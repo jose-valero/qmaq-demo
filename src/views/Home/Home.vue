@@ -7,12 +7,12 @@
           DESDE ESTA APLICACION PODRA SUBIR ARCHIVOS CORRESPONDIENTES AL AFIP
         </h6>
         <FileUpload
-          name="myfile"
-          url="./"
+          name="total"
+          url="http://localhost:8080/maquinaria/excel"
           v-on:before-upload="onUpload"
           :multiple="true"
           accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-          :maxFileSize="1000000"
+          :maxFileSize="3000000000"
           chooseLabel="Adjuntar Archivo"
           uploadLabel="Guardar"
           cancelLabel="Cancel"

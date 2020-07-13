@@ -19,7 +19,6 @@ export default {
   data() {
     return {
       maquinaria : null,
-      selectedMaquinaria: "",
       maquinarias: []
     };
   },
@@ -38,8 +37,7 @@ export default {
   },
   methods: {
     maquinariaChange(evt) {
-      this.selectedMaquinaria = evt.value.name;
-      this.$emit('maquinaSeleccionada', this.selectedMaquinaria);
+      this.$emit('maquinaSeleccionada', evt.value.name);
     }
   }
 };
