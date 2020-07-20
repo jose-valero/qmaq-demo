@@ -18,7 +18,7 @@ export default {
   name: "DDCategoria",
   data() {
     return {
-      maquinaria : null,
+      maquinaria: null,
       maquinarias: []
     };
   },
@@ -32,12 +32,11 @@ export default {
           );
         });
       }
-
     );
   },
   methods: {
     maquinariaChange(evt) {
-      this.$emit('maquinaSeleccionada', evt.value.name);
+      this.$emit("maquinaSeleccionada", evt.value.name);
     }
   }
 };

@@ -25,13 +25,14 @@ export default {
   created() {
     console.time("juantime");
     fetch("http://localhost:8080/file_uploader/getsubcategorias").then(
-            response => {
-              response.json().then(maquinarias => {
-                this.cities = []
-                maquinarias.forEach(maquinaria =>
-                        this.cities.push({name: maquinaria, code: "a1"}))
-              });
-            }
+      response => {
+        response.json().then(maquinarias => {
+          this.cities = [];
+          maquinarias.forEach(maquinaria =>
+            this.cities.push({ name: maquinaria, code: "a1" })
+          );
+        });
+      }
     );
     console.timeEnd("juantime");
   },
@@ -40,7 +41,7 @@ export default {
       const arrayValues = this.subcategoria.map(v => {
         return v.name;
       });
-      this.$emit('subcategoriaSeleccionada', arrayValues);
+      this.$emit("subcategoriaSeleccionada", arrayValues);
     }
   }
 };
@@ -70,5 +71,4 @@ export default {
         font-size: .9rem;
         line-height: 0;
     }
-
 </style>

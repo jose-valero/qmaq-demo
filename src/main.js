@@ -1,4 +1,5 @@
 import Vue from "vue";
+// import Axios from "axios"
 
 // BootstrapVue
 import "./plugins/bootstrapVue";
@@ -11,12 +12,15 @@ import store from "./store";
 import "./assets/css/main.styl";
 
 // prime framework
-import "./plugins/primeVue.js"                        //icons
+import "./plugins/primeVue.js";
 
 Vue.config.productionTip = false;
+// Vue.use("Axeio", Axios)
 
 new Vue({
   router,
   store,
+  // Axios,
+
   render: h => h(App)
 }).$mount("#app");

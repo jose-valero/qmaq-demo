@@ -6,43 +6,67 @@
         <h6 class="p-text-bold">
           DESDE ESTA APLICACION PODRA SUBIR ARCHIVOS CORRESPONDIENTES AL AFIP
         </h6>
-        <FileUpload
+
+        <!-- <FileUpload
+          mode="basic"
           name="total"
           url="http://localhost:8080/maquinaria/excel"
-          v-on:before-upload="onUpload"
-          :multiple="true"
           accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-          :maxFileSize="3000000000"
-          chooseLabel="Adjuntar Archivo"
-          uploadLabel="Guardar"
-          cancelLabel="Cancel"
-          type="file"
-        >
-          <template #empty>
-            <p v-if="val">Archivo cargado Exitosamente</p>
-          </template>
-        </FileUpload>
+          :maxFileSize="1000000000"
+          @upload="onUpload"
+          :auto="true"
+          chooseLabel="Browse"
+        />-->
+        <div class="uploader">
+          <DDArchivo></DDArchivo>
+          <FileUpload
+            name="total"
+            url="urlAFIP"
+            v-on:before-send="onUpload"
+            v-on:clear="onCancel"
+            :multiple="true"
+            accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+            :maxFileSize="3000000000"
+            chooseLabel="Adjuntar Archivo de AFIP"
+            uploadLabel="Guardar"
+            cancelLabel="Cancel"
+            type="file"
+          ></FileUpload>
+
+          <!-- <Message></Message> -->
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+import DDArchivo from "./DDArchivo";
+
 export default {
   name: "home",
+  components: { DDArchivo },
 
   data() {
     return {
-      val: false
+      val: false,
+      cancel: false,
+      urlAFIP: "http://localhost:8080/maquinaria/excel",
+      urlQMAQ: ""
     };
   },
 
-  components: {},
-
-  watch: {},
+  // mounted() {
+  //   axios
+  //     .post("http://localhost:8080/maquinaria/excel")
+  //     .then(response => (this.urlAFIP = response));
+  // },
 
   methods: {
     onUpload() {
       this.val = true;
+    },
+    onCancel() {
+      this.cancel = true;
     }
   }
 };
@@ -57,18 +81,18 @@ h6 {
   color: black;
 }
 
-.p-button {
-  background: #f56827 !important;
-}
+// .p-button {
+//   background: #f56827 !important;
+// }
 
-.p-fileupload .p-fileupload-buttonbar {
-  background: none !important;
-  border: 0 !important;
-}
+// .p-fileupload .p-fileupload-buttonbar {
+//   background: none !important;
+//   border: 0 !important;
+// }
 
-.p-fileupload .p-fileupload-content {
-  background: none !important;
-  border: 0 !important;
-  color: #1f2d40 !important;
-}
+// .p-fileupload .p-fileupload-content {
+//   background: none !important;
+//   border: 0 !important;
+//   color: #1f2d40 !important;
+// }
 </style>

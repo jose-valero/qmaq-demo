@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     dateSelect(e) {
-      this.$emit('selectedFecha', e.year);
+      this.$emit("selectedFecha", e.year);
     }
   }
 };
