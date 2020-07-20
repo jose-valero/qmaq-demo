@@ -3,9 +3,9 @@
     <div class="p-col p-shadow-2 p-m-2">
       <div class="p-mx-6 p-my-4">
         <h5 class="p-text-bold">ARCHIVOS DE ADUANA</h5>
-        <h6 class="p-text-bold">
-          DESDE ESTA APLICACION PODRA SUBIR ARCHIVOS CORRESPONDIENTES AL AFIP
-        </h6>
+<!--        <h6 class="p-text-bold">-->
+<!--          DESDE ESTA APLICACION PODRA SUBIR ARCHIVOS CORRESPONDIENTES AL AFIP-->
+<!--        </h6>-->
         <FileUpload
           name="total"
           url="http://localhost:8080/maquinaria/excel"

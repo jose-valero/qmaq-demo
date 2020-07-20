@@ -2,7 +2,6 @@
   <div class="cat">
     <label class="text-dark mb-0 mr-2">CATEGORIA DE MAQUINARIA</label>
     <Dropdown
-      :filter="true"
       v-model="maquinaria"
       :options="maquinarias"
       optionLabel="name"
@@ -23,7 +22,7 @@ export default {
     };
   },
   created() {
-    fetch("http://localhost:8080/file_uploader/tipomaquinaria").then(
+    fetch("http://localhost:8080/maquinaria/tipos").then(
       response => {
         response.json().then(maquinarias => {
           this.maquinarias = [];

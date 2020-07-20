@@ -23,7 +23,6 @@ export default {
     };
   },
   created() {
-    console.time("juantime");
     fetch("http://localhost:8080/file_uploader/getsubcategorias").then(
             response => {
               response.json().then(maquinarias => {
@@ -33,7 +32,6 @@ export default {
               });
             }
     );
-    console.timeEnd("juantime");
   },
   methods: {
     subcategoriaChange() {
