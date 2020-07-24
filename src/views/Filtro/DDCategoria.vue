@@ -22,7 +22,7 @@ export default {
     };
   },
   created() {
-    fetch("http://localhost:8080/maquinaria/tipos").then(
+    fetch("http://localhost:8080/maquinaria/categoria").then(
       response => {
         response.json().then(maquinarias => {
           this.maquinarias = [];

@@ -23,7 +23,7 @@ export default {
     };
   },
   created() {
-    fetch("http://localhost:8080/file_uploader/getsubcategorias").then(
+    fetch("http://localhost:8080/maquinaria/cod-venta").then(
             response => {
               response.json().then(maquinarias => {
                 this.cities = []

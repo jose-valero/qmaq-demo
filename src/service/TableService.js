@@ -1,236 +1,138 @@
 export default class TableService {
 
-    getData() {
-        return fetch("http://localhost:8080/file_uploader/save").then(res => res.json())
-    }
+    // getData() {
+    //     return fetch("http://localhost:8080/file_uploader/save").then(res => res.json())
+    // }
 
     getDataMock() {
         return {
             "data": [
                 {
-                    "2020": {
-                        "Abril": [
-                            {
-                                "cantDeclarada": 1.0,
-                                "precioUnitarioDolares": 80642.7,
-                                "fobTotalDolares": 80642.7,
-                                "cif": 83455.93,
-                                "codVenta": "CIP"
-                            },
-                            {
-                                "cantDeclarada": 105.0,
-                                "precioUnitarioDolares": 1692100.8520000002,
-                                "fobTotalDolares": 3080449.54,
-                                "cif": 3209423.6700000004,
-                                "codVenta": "FOB"
-                            },
-                            {
-                                "cantDeclarada": 21.0,
-                                "precioUnitarioDolares": 1146575.9000000001,
-                                "fobTotalDolares": 1399047.2300000002,
-                                "cif": 1448657.1300000001,
-                                "codVenta": "CFR"
-                            },
-                            {
-                                "cantDeclarada": 1.0,
-                                "precioUnitarioDolares": 110916.18,
-                                "fobTotalDolares": 110916.18,
-                                "cif": 113221.39,
-                                "codVenta": "DAT"
-                            },
-                            {
-                                "cantDeclarada": 9.0,
-                                "precioUnitarioDolares": 531345.85,
-                                "fobTotalDolares": 531345.85,
-                                "cif": 565035.5,
-                                "codVenta": "EXW"
-                            },
-                            {
-                                "cantDeclarada": 5.0,
-                                "precioUnitarioDolares": 495000.0,
-                                "fobTotalDolares": 495000.0,
-                                "cif": 506464.5,
-                                "codVenta": "CPT"
-                            },
-                            {
-                                "cantDeclarada": 35.0,
-                                "precioUnitarioDolares": 1983681.1230000001,
-                                "fobTotalDolares": 2584798.09,
-                                "cif": 2738184.15,
-                                "codVenta": "CIF"
-                            }
-                        ],
-                        "Marzo": [
-                            {
-                                "cantDeclarada": 13.0,
-                                "precioUnitarioDolares": 1300376.0,
-                                "fobTotalDolares": 1300376.0,
-                                "cif": 1329862.0599999998,
-                                "codVenta": "CPT"
-                            },
-                            {
-                                "cantDeclarada": 1.0,
-                                "precioUnitarioDolares": 20906.4,
-                                "fobTotalDolares": 20906.4,
-                                "cif": 24410.49,
-                                "codVenta": "MUL"
-                            },
-                            {
-                                "cantDeclarada": 113.0,
-                                "precioUnitarioDolares": 2270221.75,
-                                "fobTotalDolares": 2757871.61,
-                                "cif": 2960842.5500000003,
-                                "codVenta": "FOB"
-                            },
-                            {
-                                "cantDeclarada": 5.0,
-                                "precioUnitarioDolares": 661953.6499999999,
-                                "fobTotalDolares": 987953.6499999999,
-                                "cif": 1025244.5800000001,
-                                "codVenta": "FCA"
-                            },
-                            {
-                                "cantDeclarada": 102.0,
-                                "precioUnitarioDolares": 2307232.475,
-                                "fobTotalDolares": 3408081.32,
-                                "cif": 3535095.590000001,
-                                "codVenta": "CIF"
-                            },
-                            {
-                                "cantDeclarada": 2.0,
-                                "precioUnitarioDolares": 238162.0,
-                                "fobTotalDolares": 238162.0,
-                                "cif": 243371.38,
-                                "codVenta": "CIP"
-                            },
-                            {
-                                "cantDeclarada": 11.0,
-                                "precioUnitarioDolares": 270447.33,
-                                "fobTotalDolares": 326149.08,
-                                "cif": 342838.77,
-                                "codVenta": "CFR"
-                            },
-                            {
-                                "cantDeclarada": 5.0,
-                                "precioUnitarioDolares": 724210.6699999999,
-                                "fobTotalDolares": 724210.6699999999,
-                                "cif": 750883.2999999999,
-                                "codVenta": "EXW"
-                            }
-                        ]
+                    "2018": {
+                        "Ene": {
+                            "cantidad_declarada": 123,
+                            "fob": 234,
+                            "cif": 334
+                        },
+                        "Feb": {
+                            "cantidad_declarada": 124,
+                            "fob": 235,
+                            "cif": 335
+                        },
+                        "Mar": {
+                            "cantidad_declarada": 125,
+                            "fob": 236,
+                            "cif": 336
+                        },
+                        "Abr": {
+                            "cantidad_declarada": 126,
+                            "fob": 237,
+                            "cif": 337
+                        },
+                        "May": {
+                            "cantidad_declarada": 127,
+                            "fob": 238,
+                            "cif": 338
+                        },
+                        "Jun": {
+                            "cantidad_declarada": 128,
+                            "fob": 239,
+                            "cif": 339
+                        },
+                        "Jul": {
+                            "cantidad_declarada": 129,
+                            "fob": 240,
+                            "cif": 340
+                        },
+                        "Ago": {
+                            "cantidad_declarada": 110,
+                            "fob": 241,
+                            "cif": 341
+                        },
+                        "Sep": {
+                            "cantidad_declarada": 111,
+                            "fob": 242,
+                            "cif": 342
+                        },
+                        "Oct": {
+                            "cantidad_declarada": 112,
+                            "fob": 243,
+                            "cif": 343
+                        },
+                        "Nov": {
+                            "cantidad_declarada": 113,
+                            "fob": 244,
+                            "cif": 344
+                        },
+                        "Dic": {
+                            "cantidad_declarada": 114,
+                            "fob": 245,
+                            "cif": 345
+                        }
                     }
                 },
                 {
-                    "2021": {
-                        "Abril": [
-                            {
-                                "cantDeclarada": 1.0,
-                                "precioUnitarioDolares": 80642.7,
-                                "fobTotalDolares": 80642.7,
-                                "cif": 83455.93,
-                                "codVenta": "CIP"
-                            },
-                            {
-                                "cantDeclarada": 105.0,
-                                "precioUnitarioDolares": 1692100.8520000002,
-                                "fobTotalDolares": 3080449.54,
-                                "cif": 3209423.6700000004,
-                                "codVenta": "FOB"
-                            },
-                            {
-                                "cantDeclarada": 21.0,
-                                "precioUnitarioDolares": 1146575.9000000001,
-                                "fobTotalDolares": 1399047.2300000002,
-                                "cif": 1448657.1300000001,
-                                "codVenta": "CFR"
-                            },
-                            {
-                                "cantDeclarada": 1.0,
-                                "precioUnitarioDolares": 110916.18,
-                                "fobTotalDolares": 110916.18,
-                                "cif": 113221.39,
-                                "codVenta": "DAT"
-                            },
-                            {
-                                "cantDeclarada": 9.0,
-                                "precioUnitarioDolares": 531345.85,
-                                "fobTotalDolares": 531345.85,
-                                "cif": 565035.5,
-                                "codVenta": "EXW"
-                            },
-                            {
-                                "cantDeclarada": 5.0,
-                                "precioUnitarioDolares": 495000.0,
-                                "fobTotalDolares": 495000.0,
-                                "cif": 506464.5,
-                                "codVenta": "CPT"
-                            },
-                            {
-                                "cantDeclarada": 35.0,
-                                "precioUnitarioDolares": 1983681.1230000001,
-                                "fobTotalDolares": 2584798.09,
-                                "cif": 2738184.15,
-                                "codVenta": "CIF"
-                            }
-                        ],
-                        "Marzo": [
-                            {
-                                "cantDeclarada": 13.0,
-                                "precioUnitarioDolares": 1300376.0,
-                                "fobTotalDolares": 1300376.0,
-                                "cif": 1329862.0599999998,
-                                "codVenta": "CPT"
-                            },
-                            {
-                                "cantDeclarada": 1.0,
-                                "precioUnitarioDolares": 20906.4,
-                                "fobTotalDolares": 20906.4,
-                                "cif": 24410.49,
-                                "codVenta": "MUL"
-                            },
-                            {
-                                "cantDeclarada": 113.0,
-                                "precioUnitarioDolares": 2270221.75,
-                                "fobTotalDolares": 2757871.61,
-                                "cif": 2960842.5500000003,
-                                "codVenta": "FOB"
-                            },
-                            {
-                                "cantDeclarada": 5.0,
-                                "precioUnitarioDolares": 661953.6499999999,
-                                "fobTotalDolares": 987953.6499999999,
-                                "cif": 1025244.5800000001,
-                                "codVenta": "FCA"
-                            },
-                            {
-                                "cantDeclarada": 102.0,
-                                "precioUnitarioDolares": 2307232.475,
-                                "fobTotalDolares": 3408081.32,
-                                "cif": 3535095.590000001,
-                                "codVenta": "CIF"
-                            },
-                            {
-                                "cantDeclarada": 2.0,
-                                "precioUnitarioDolares": 238162.0,
-                                "fobTotalDolares": 238162.0,
-                                "cif": 243371.38,
-                                "codVenta": "CIP"
-                            },
-                            {
-                                "cantDeclarada": 11.0,
-                                "precioUnitarioDolares": 270447.33,
-                                "fobTotalDolares": 326149.08,
-                                "cif": 342838.77,
-                                "codVenta": "CFR"
-                            },
-                            {
-                                "cantDeclarada": 5.0,
-                                "precioUnitarioDolares": 724210.6699999999,
-                                "fobTotalDolares": 724210.6699999999,
-                                "cif": 750883.2999999999,
-                                "codVenta": "EXW"
-                            }
-                        ]
+                    "2019": {
+                        "Ene": {
+                            "cantidad_declarada": 434,
+                            "fob": 534,
+                            "cif": 634
+                        },
+                        "Feb": {
+                            "cantidad_declarada": 435,
+                            "fob": 535,
+                            "cif": 635
+                        },
+                        "Mar": {
+                            "cantidad_declarada": 436,
+                            "fob": 536,
+                            "cif": 636
+                        },
+                        "Abr": {
+                            "cantidad_declarada": 437,
+                            "fob": 537,
+                            "cif": 637
+                        },
+                        "May": {
+                            "cantidad_declarada": 438,
+                            "fob": 538,
+                            "cif": 638
+                        },
+                        "Jun": {
+                            "cantidad_declarada": 439,
+                            "fob": 539,
+                            "cif": 639
+                        },
+                        "Jul": {
+                            "cantidad_declarada": 440,
+                            "fob": 540,
+                            "cif": 640
+                        },
+                        "Ago": {
+                            "cantidad_declarada": 441,
+                            "fob": 541,
+                            "cif": 641
+                        },
+                        "Sep": {
+                            "cantidad_declarada": 442,
+                            "fob": 542,
+                            "cif": 642
+                        },
+                        "Oct": {
+                            "cantidad_declarada": 443,
+                            "fob": 543,
+                            "cif": 643
+                        },
+                        "Nov": {
+                            "cantidad_declarada": 444,
+                            "fob": 544,
+                            "cif": 644
+                        },
+                        "Dic": {
+                            "cantidad_declarada": 445,
+                            "fob": 545,
+                            "cif": 645
+                        }
                     }
                 }
             ]

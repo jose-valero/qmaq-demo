@@ -6,8 +6,9 @@
             <caption>{{year}}</caption>
             <tr>
                 <th scope="col">Mercado Hidrogruas</th>
-                <span v-for="datosMeses in Object.values(data)" :key="datosMeses">
-                <th v-for="datosMeses2 in Object.keys(datosMeses)" :key="datosMeses2" scope="col">{{datosMeses2}}</th>
+                <span v-for="datosMeses in Object.values(data)" :key="datosMeses.key">
+                <th v-for="datosMeses2 in Object.keys(datosMeses)" :key="datosMeses2.key"
+                    scope="col">{{datosMeses2}}</th>
                     </span>
             </tr>
             </thead>
@@ -15,8 +16,21 @@
             <tbody>
             <tr>
                 <th scope="row">Volúmen (uds)</th>
-                <th></th>
-                <th></th>
+                <span v-for="datosMeses in Object.values(data)" :key="datosMeses.key">
+                    <td v-for="datosMeses2 in Object.values(datosMeses)" :key="datosMeses2.key">{{datosMeses2.cantidad_declarada}}</td>
+                </span>
+            </tr>
+            <tr>
+                <th scope="row">Factura FOB (u$s 000)</th>
+                <span v-for="datosMeses in Object.values(data)" :key="datosMeses.key">
+                     <td v-for="datosMeses2 in Object.values(datosMeses)" :key="datosMeses2.key">{{datosMeses2.fob}}</td>
+                </span>
+            </tr>
+            <tr>
+                <th scope="row">Factura CIF (u$s 000)</th>
+                <span v-for="datosMeses in Object.values(data)" :key="datosMeses.key">
+                    <td v-for="datosMeses2 in Object.values(datosMeses)" :key="datosMeses2.key">{{datosMeses2.cif}}</td>
+                </span>
             </tr>
             </tbody>
         </table>
@@ -32,31 +46,6 @@
         data() {
             return {
                 dataTotal: null,
-                meses: [
-                    "Enero",
-                    "Febrero",
-                    "Marzo",
-                    "Abril",
-                    "Mayo",
-                    "Junio",
-                    "Julio",
-                    "Agosto",
-                    "Septiembre",
-                    "Octubre",
-                    "Noviembre",
-                    "Diciembre"
-                ],
-                tipoFacturas: [
-                    "FOB",
-                    "CIF",
-                    "CIP",
-                    "CFR",
-                    "DAT",
-                    "EXW",
-                    "CPT",
-                    "MUL",
-                    "FCA",
-                ]
             }
         },
         tablaTotalService: null,
@@ -67,8 +56,7 @@
 
             this.dataTotal = this.tablaTotalService.getDataMock().data
         },
-        methods: {
-        }
+        methods: {}
     }
 
 
