@@ -1,28 +1,23 @@
 <template>
     <div class=" d-flex table-responsive">
-        <table class="table" v-for="(data, key) in dataTotal" :index="key" :key = "key">
-<!--            <caption>List of users</caption>-->
-            <thead>
+
+        <table class="table" v-for="data in this.dataTotal" :key="data.key">
+            <thead v-for="year in Object.keys(data)" :key="year">
+            <caption>{{year}}</caption>
             <tr>
                 <th scope="col">Mercado Hidrogruas</th>
-<!--                <th v-for="mes in meses" :key = "mes" scope="col">{{mes}}</th>-->
-<!--                <th>{{ data.mes }}</th>-->
-
+                <span v-for="datosMeses in Object.values(data)" :key="datosMeses">
+                <th v-for="datosMeses2 in Object.keys(datosMeses)" :key="datosMeses2" scope="col">{{datosMeses2}}</th>
+                    </span>
             </tr>
             </thead>
+
             <tbody>
             <tr>
                 <th scope="row">Volúmen (uds)</th>
-                <td>{{ key }}</td>
-                <td>{{ data }}</td>
-
+                <th></th>
+                <th></th>
             </tr>
-<!--            <tr v-for="tipoFactura in tipoFacturas" :key="tipoFactura">-->
-<!--                <th scope="row" >Factura {{ tipoFactura }} (u$s 000)</th>-->
-<!--                <td>Jacob</td>-->
-<!--                <td>Thornton</td>-->
-<!--                <td>@fat</td>-->
-<!--            </tr>-->
             </tbody>
         </table>
     </div>
@@ -31,17 +26,13 @@
 
 <script>
     import TableService from "../../service/TableService";
+
     export default {
         name: "Total",
         data() {
             return {
                 dataTotal: null,
-                years: [
-                    "2015",
-                    "2014",
-                    "2013"
-                ],
-                meses : [
+                meses: [
                     "Enero",
                     "Febrero",
                     "Marzo",
@@ -65,8 +56,6 @@
                     "CPT",
                     "MUL",
                     "FCA",
-
-
                 ]
             }
         },
@@ -75,18 +64,10 @@
             this.tablaTotalService = new TableService;
         },
         mounted() {
-            this.dataTotal = this.tablaTotalService.getDataMock();
-            console.log(this.dataTotal)
-            // this.productService.getData.then(data => this.products = data);
+
+            this.dataTotal = this.tablaTotalService.getDataMock().data
         },
         methods: {
-            formatCurrency(value) {
-                return value.toLocaleString('en-US', {style: 'currency', currency: 'USD'});
-            },
-            // getMes() {
-            //     this.totales.forEach(data2 => Object.values(data2).forEach(data3 => this.mes = data3.mesAno));
-            //     return this.mes;
-            // }
         }
     }
 
