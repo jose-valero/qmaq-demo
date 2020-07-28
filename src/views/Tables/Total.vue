@@ -2,8 +2,8 @@
     <div class=" d-flex table-responsive">
 
         <table class="table" v-for="data in this.dataTotal" :key="data.key">
-            <thead v-for="year in Object.keys(data)" :key="year">
-            <caption>{{year}}</caption>
+            <thead class="thead-light">
+            <tr v-for="year in Object.keys(data)" :key="year" class="bg-dark text-white">{{year}}</tr>
             <tr>
                 <th scope="col">Mercado Hidrogruas</th>
                 <span v-for="datosMeses in Object.values(data)" :key="datosMeses.key">
@@ -46,9 +46,9 @@
         data() {
             return {
                 dataTotal: null,
+                tablaTotalService: null,
             }
         },
-        tablaTotalService: null,
         created() {
             this.tablaTotalService = new TableService;
         },
@@ -63,6 +63,10 @@
 </script>
 
 <style scoped>
+    .table thead th {
+        border-bottom: none;
+    }
+
     .table-header {
         display: flex;
         align-items: center;
