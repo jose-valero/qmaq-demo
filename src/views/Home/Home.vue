@@ -10,21 +10,20 @@
                         url="http://localhost:8080/maquinaria/excel/aduana"
                         v-on:error="error"
                         v-on:upload="exito"
-                        v-on:progress="reset"
-                        :multiple="true"
-                        accept="text/csv"
+                        v-on:select="reset"
+                        accept=".csv"
                         :maxFileSize="3000000000"
+                        mode = "basic"
                         chooseLabel="Archivo Aduana"
-                        uploadLabel="Guardar"
-                        cancelLabel="Cancel"
                         type="file"
-                >
-                    <template #empty v-if="cargaExitosa">Archivo cargado Exitosamente.</template>
-                    <template #empty v-else-if="errorCarga">
-                        Archivo no pudo ser cargado, no corresponde al tipo de archivo esperado <br>
-                        Recuerde debe ser proveniente de la aduana y de extension .csv
-                    </template>
-                </FileUpload>
+                        class="mt-3"
+                />
+
+                <div v-if="cargaExitosa" class="text-dark mt-3">Archivo cargado Exitosamente.</div>
+                <div v-else-if="errorCarga" class="text-dark mt-3">
+                    Archivo no pudo ser cargado, no corresponde al tipo de archivo esperado <br>
+                    Recuerde debe ser proveniente de la aduana y de extension .csv
+                </div>
             </div>
         </div>
     </div>
@@ -68,18 +67,4 @@
         color: black;
     }
 
-    .p-button {
-        background: #f56827 !important;
-    }
-
-    .p-fileupload .p-fileupload-buttonbar {
-        background: none !important;
-        border: 0 !important;
-    }
-
-    .p-fileupload .p-fileupload-content {
-        background: none !important;
-        border: 0 !important;
-        color: #1f2d40 !important;
-    }
 </style>
