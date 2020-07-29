@@ -12,9 +12,9 @@
                 <li class="nav-item ml-5">
                     <DDCategoria v-on:maquinaSeleccionada="getCategoria"/>
                 </li>
-                <li class="nav-item ml-5">
-                    <DDMaquinaria v-on:subcategoriaSeleccionada="getSubcategoria"/>
-                </li>
+                <!--                <li class="nav-item ml-5">-->
+                <!--                    <DDMaquinaria v-on:subcategoriaSeleccionada="getSubcategoria"/>-->
+                <!--                </li>-->
             </ul>
             <form class="form-inline my-lg-0">
                 <button v-on:click="dataFinal" type="button" class="btn btnBuscar ml-5">
@@ -29,16 +29,17 @@
 
 <script>
     import Calendar from "./Calendar";
-
-    import DDMaquinaria from "./DDMaquinaria";
+    // import DDMaquinaria from "./DDMaquinaria";
     import DDCategoria from "./DDCategoria";
     import ResultTables from "../Tables/ResultTables";
+    import TableService from "../../service/TableService";
+    import {eventBus} from "../../eventBus/EventBus"
 
     export default {
         name: "ResultFiltro",
         components: {
             Calendar,
-            DDMaquinaria,
+            // DDMaquinaria,
             DDCategoria,
             ResultTables
         },
@@ -47,9 +48,14 @@
                 sharedItems: null,
                 categoriaSeleccionada: "",
                 subcategoriaSeleccionada: [],
-                fechaDesde : null,
-                fechaHasta : null
+                fechaDesde: null,
+                fechaHasta: null,
+                tablaTotalService: null,
+                dataTotal: null
             };
+        },
+        created() {
+            this.tablaTotalService = new TableService;
         },
         methods: {
             getCategoria(categoria) {
@@ -65,10 +71,11 @@
                 this.fechaHasta = fechaHasta;
             },
             dataFinal() {
-                console.log("desde resultFiltro", this.categoriaSeleccionada);
-                console.log("desde resultFiltro", this.subcategoriaSeleccionada);
-                console.log("fecha desde", this.fechaDesde)
-                console.log("fecha hasta", this.fechaHasta);
+                this.tablaTotalService.getTablaTotal(this.fechaDesde, this.fechaHasta, this.categoriaSeleccionada).then(data => {
+                    this.dataTotal = data;
+                    eventBus.$emit('eventDatatotal', this.dataTotal)
+                    eventBus.$emit('eventCategoria', this.categoriaSeleccionada)
+                })
             }
         }
     };
