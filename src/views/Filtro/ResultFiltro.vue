@@ -70,9 +70,36 @@
             getFechaHasta(fechaHasta) {
                 this.fechaHasta = fechaHasta;
             },
+            mergeMonths(data) {
+                const dataReturn = []
+                data.forEach(year => {
+                    const yearKeys = Object.keys(year)
+                    const meses = Object.keys(Object.values(year)[0])
+                    const ObjectMonths = {}
+                    this.monthArray().forEach(mon => {
+                        ObjectMonths[mon] = this.emptyMonth()
+                        if (meses.includes(mon)) {
+                            ObjectMonths[mon] = year[yearKeys][mon]
+                        }
+                    })
+                    dataReturn.push({[`${yearKeys[0]}`]: ObjectMonths})
+                })
+                return dataReturn
+            },
+            emptyMonth() {
+                return {
+                    "cif": 0,
+                    "fob": 0,
+                    "cantidad_declarada": 0
+                }
+            },
+            monthArray() {
+                return ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dic"]
+            },
+
             dataFinal() {
                 this.tablaTotalService.getTablaTotal(this.fechaDesde, this.fechaHasta, this.categoriaSeleccionada).then(data => {
-                    this.dataTotal = data;
+                    this.dataTotal = this.mergeMonths(data);
                     eventBus.$emit('eventDatatotal', this.dataTotal)
                     eventBus.$emit('eventCategoria', this.categoriaSeleccionada)
                 })
