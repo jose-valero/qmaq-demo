@@ -6,7 +6,6 @@
       :options="maquinarias"
       optionLabel="name"
       v-on:change="maquinariaChange"
-      placeholder
       class="bg-light p-rounded-1"
     />
   </div>

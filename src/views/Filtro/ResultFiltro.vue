@@ -21,9 +21,16 @@
       </ul>
       <form class="form-inline my-lg-0">
         <Button
+          v-if="!isClear"
           :disabled="botonDisabled"
           v-on:click="dataFinal"
           label="Buscar"
+          class="p-button-sm p-button-raised p-button-warning mx-5 my-0"
+        ></Button>
+        <Button
+          v-if="isClear"
+          v-on:click="limpiar"
+          label="Limpiar"
           class="p-button-sm p-button-raised p-button-warning mx-5 my-0"
         ></Button>
       </form>
@@ -58,7 +65,8 @@ export default {
       fechaHasta: null,
       tablaTotalService: null,
       dataTotal: null,
-      botonDisabled: false
+      botonDisabled: false,
+      isClear: false
     };
   },
   created() {
@@ -121,6 +129,7 @@ export default {
       ];
     },
     dataFinal() {
+      this.isClear = true;
       this.tablaTotalService
         .getTablaTotal(
           this.fechaDesde,
@@ -143,6 +152,16 @@ export default {
       } else {
         this.botonDisabled = false;
       }
+    },
+    limpiar() {
+      while (this.dataTotal.length > 0) {
+        this.dataTotal.pop();
+      }
+      this.categoriaSeleccionada = "";
+      this.fechaDesde = null;
+      this.fechaHasta = null;
+      this.isClear = false;
+      this.isButtonDisabled();
     }
   }
 };

@@ -6,7 +6,6 @@
       :inline="true"
       v-model="value"
       view="year"
-      dateFormat="yy"
       :yearNavigator="true"
       yearRange="2000:2030"
       v-on:year-change="dateSelect"
