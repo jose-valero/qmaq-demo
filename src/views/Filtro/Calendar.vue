@@ -1,6 +1,6 @@
 <template>
   <div class="rango">
-    <label class="text-dark mx-1" for="periodo">{{ rango }}</label>
+    <label class="text-dark p-mx-3" for="periodo">{{ rango }}</label>
     <Calendar
       id="periodo"
       :inline="true"
@@ -10,6 +10,7 @@
       :yearNavigator="true"
       yearRange="2000:2030"
       v-on:year-change="dateSelect"
+      class="rounded-1"
     />
   </div>
 </template>
@@ -26,7 +27,7 @@ export default {
   },
   methods: {
     dateSelect(e) {
-      this.$emit('selectedFecha', e.year);
+      this.$emit("selectedFecha", e.year);
     }
   }
 };
