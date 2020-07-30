@@ -1,5 +1,15 @@
 <template>
   <div class=" d-flex table-responsive">
+    <table v-if="dataTotal.length > 0" class="table table-bordered p-col-4">
+      <tbody class="text-danger">
+        <tr class="d-flex flex-column p-pt-4 p-mt-4">
+          <th scope="row" class="bg-warning">{{ tipoCategoria }}</th>
+          <th scope="row">Volúmen (uds)</th>
+          <th scope="row">Factura FOB (u$s 000)</th>
+          <th scope="row">Factura CIF (u$s 000)</th>
+        </tr>
+      </tbody>
+    </table>
     <table
       class="table table-bordered"
       v-for="data in this.dataTotal"
@@ -15,7 +25,6 @@
           {{ years }}
         </th>
         <tr>
-          <th scope="col" class="bg-warning p-col-3">{{ tipoCategoria }}</th>
           <span v-for="datosMeses in Object.values(data)" :key="datosMeses.key">
             <th
               v-for="meses in Object.keys(datosMeses)"
@@ -30,7 +39,6 @@
 
       <tbody>
         <tr>
-          <th scope="row">Volúmen (uds)</th>
           <span v-for="datosMeses in Object.values(data)" :key="datosMeses.key">
             <td
               v-for="datosMeses2 in Object.values(datosMeses)"
@@ -41,7 +49,6 @@
           </span>
         </tr>
         <tr>
-          <th scope="row">Factura FOB (u$s 000)</th>
           <span v-for="datosMeses in Object.values(data)" :key="datosMeses.key">
             <td
               v-for="datosMeses2 in Object.values(datosMeses)"
@@ -56,7 +63,6 @@
           </span>
         </tr>
         <tr>
-          <th scope="row">Factura CIF (u$s 000)</th>
           <span v-for="datosMeses in Object.values(data)" :key="datosMeses.key">
             <td
               v-for="datosMeses2 in Object.values(datosMeses)"
