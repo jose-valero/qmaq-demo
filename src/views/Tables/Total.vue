@@ -1,7 +1,7 @@
 <template>
   <div class=" d-flex table-responsive">
     <table v-if="dataTotal.length > 0" class="table table-bordered p-col-4">
-      <tbody class="text-danger">
+      <tbody class="text-dark">
         <tr class="d-flex flex-column p-pt-4 p-mt-4">
           <th scope="row" class="bg-warning">{{ tipoCategoria }}</th>
           <th scope="row">Volúmen (uds)</th>
