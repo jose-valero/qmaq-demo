@@ -1,16 +1,17 @@
 <template>
   <div class="d-flex table-responsive">
-    <table class="table" v-for="data in this.dataTotal" :key="data.key">
-      <thead v-for="year in Object.keys(data)" :key="year" >
-        <caption>{{year}}</caption>
+    <table class="table table-bordered" v-for="data in this.dataTotal" :key="data.key">
+      <thead class="thead-light">
+        <th
+          v-for="years in Object.keys(data)"
+          :key="years.key"
+          colspan="15"
+          class="bg-dark text-white text-center"
+        >{{years}}</th>
         <tr>
-          <th scope="col">Mercado Hidrogruas</th>
+          <th scope="col" class="bg-warning p-col-3">{{tipoCategoria}}</th>
           <span v-for="datosMeses in Object.values(data)" :key="datosMeses.key">
-            <th
-              v-for="datosMeses2 in Object.keys(datosMeses)"
-              :key="datosMeses2.key"
-              scope="col"
-            >{{datosMeses2}}</th>
+            <th v-for="meses in Object.keys(datosMeses)" :key="meses.key" scope="col">{{meses}}</th>
           </span>
         </tr>
       </thead>
@@ -50,26 +51,38 @@
 
 <script>
 import TableService from "../../service/TableService";
+import { eventBus } from "../../eventBus/EventBus";
 
 export default {
   name: "Total",
   data() {
     return {
-      dataTotal: null
+      dataTotal: null,
+      tablaTotalService: null,
+      tipoCategoria: ""
     };
   },
-  tablaTotalService: null,
   created() {
     this.tablaTotalService = new TableService();
+    eventBus.$on("eventDatatotal", this.getDataTotal);
+    eventBus.$on("eventCategoria", this.getCategoriaMaquinaria);
   },
-  mounted() {
-    this.dataTotal = this.tablaTotalService.getDataMock().data;
-  },
-  methods: {}
+  methods: {
+    getDataTotal(data) {
+      this.dataTotal = data;
+    },
+    getCategoriaMaquinaria(categoria) {
+      this.tipoCategoria = categoria;
+    }
+  }
 };
 </script>
 
 <style scoped>
+.table thead th {
+  border-bottom: none;
+}
+
 .table-header {
   display: flex;
   align-items: center;
