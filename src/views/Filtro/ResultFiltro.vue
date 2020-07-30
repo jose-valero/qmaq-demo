@@ -21,6 +21,7 @@
       </ul>
       <form class="form-inline my-lg-0">
         <Button
+          :disabled="botonDisabled"
           v-on:click="dataFinal"
           label="Buscar"
           class="p-button-sm p-button-raised p-button-warning mx-5 my-0"
@@ -56,24 +57,29 @@ export default {
       fechaDesde: null,
       fechaHasta: null,
       tablaTotalService: null,
-      dataTotal: null
+      dataTotal: null,
+      botonDisabled: false
     };
   },
   created() {
     this.tablaTotalService = new TableService();
+    this.isButtonDisabled();
   },
   methods: {
     getCategoria(categoria) {
       this.categoriaSeleccionada = categoria;
+      this.isButtonDisabled();
     },
     getSubcategoria(subCat) {
       this.subcategoriaSeleccionada = subCat;
     },
     getFechaDesde(fechaDesde) {
       this.fechaDesde = fechaDesde;
+      this.isButtonDisabled();
     },
     getFechaHasta(fechaHasta) {
       this.fechaHasta = fechaHasta;
+      this.isButtonDisabled();
     },
     mergeMonths(data) {
       const dataReturn = [];
@@ -114,7 +120,6 @@ export default {
         "Dic"
       ];
     },
-
     dataFinal() {
       this.tablaTotalService
         .getTablaTotal(
@@ -127,6 +132,17 @@ export default {
           eventBus.$emit("eventDatatotal", this.dataTotal);
           eventBus.$emit("eventCategoria", this.categoriaSeleccionada);
         });
+    },
+    isButtonDisabled() {
+      if (
+        this.categoriaSeleccionada === "" ||
+        this.fechaDesde == null ||
+        this.fechaHasta == null
+      ) {
+        this.botonDisabled = true;
+      } else {
+        this.botonDisabled = false;
+      }
     }
   }
 };
@@ -141,7 +157,7 @@ export default {
 // padding: 0;
 // }
 ul li {
-  margin-left: 80px;
-  vertical-align: top;
+    margin-left: 80px;
+    vertical-align: top;
 }
 </style>
