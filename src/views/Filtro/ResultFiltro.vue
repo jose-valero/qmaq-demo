@@ -88,9 +88,9 @@
             },
             emptyMonth() {
                 return {
-                    "cif": 0,
-                    "fob": 0,
-                    "cantidad_declarada": 0
+                    "cif": "-",
+                    "fob": "-",
+                    "cantidad_declarada": "-"
                 }
             },
             monthArray() {

@@ -23,13 +23,15 @@
             <tr>
                 <th scope="row">Factura FOB (u$s 000)</th>
                 <span v-for="datosMeses in Object.values(data)" :key="datosMeses.key">
-                     <td v-for="datosMeses2 in Object.values(datosMeses)" :key="datosMeses2.key">{{datosMeses2.fob}}</td>
+                     <td v-for="datosMeses2 in Object.values(datosMeses)" :key="datosMeses2.key">{{Number(datosMeses2.fob) ? datosMeses2.fob.toFixed(2) :
+                         datosMeses2.fob}}</td>
                 </span>
             </tr>
             <tr>
                 <th scope="row">Factura CIF (u$s 000)</th>
                 <span v-for="datosMeses in Object.values(data)" :key="datosMeses.key">
-                    <td v-for="datosMeses2 in Object.values(datosMeses)" :key="datosMeses2.key">{{datosMeses2.cif}}</td>
+                    <td v-for="datosMeses2 in Object.values(datosMeses)" :key="datosMeses2.key">{{Number(datosMeses2.cif) ? datosMeses2.cif.toFixed(2) :
+                         datosMeses2.cif}}</td>
                 </span>
             </tr>
             </tbody>
