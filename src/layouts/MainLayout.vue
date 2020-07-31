@@ -2,7 +2,7 @@
   <div class="container main">
     <Header />
     <router-view />
-<!--    <Footer />-->
+    <!--    <Footer />-->
   </div>
 </template>
 
@@ -13,13 +13,13 @@ import Header from "@/components/HeaderBar/Header";
 export default {
   name: "MainLayout",
   components: {
-    Header,
+    Header
     // Footer
   }
 };
 </script>
 <style scoped>
-  .main {
-    height : 100vh !important;
-  }
+.main {
+  height: 100vh !important;
+}
 </style>

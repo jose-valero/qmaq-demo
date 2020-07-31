@@ -92,13 +92,41 @@ export default {
     mergeMonths(data) {
       const dataReturn = [];
       data.forEach(year => {
+        let total = this.emptyTotales();
+        let q1 = this.emptyTotales();
+        let q2 = this.emptyTotales();
         const yearKeys = Object.keys(year);
         const meses = Object.keys(Object.values(year)[0]);
         const ObjectMonths = {};
-        this.monthArray().forEach(mon => {
+        this.monthArray().forEach((mon, index) => {
           ObjectMonths[mon] = this.emptyMonth();
           if (meses.includes(mon)) {
             ObjectMonths[mon] = year[yearKeys][mon];
+          }
+
+          if (index <= 6 && ObjectMonths[mon].cif !== "--") {
+            q1.cif += ObjectMonths[mon].cif;
+            q1.cantidad_declarada += ObjectMonths[mon].cantidad_declarada;
+            q1.fob += ObjectMonths[mon].fob;
+          }
+          if (index === 6) {
+            ObjectMonths["Sem I"] = q1;
+          }
+          if (index > 6 && ObjectMonths[mon].cif !== "--") {
+            q2.cif += ObjectMonths[mon].cif;
+            q2.cantidad_declarada += ObjectMonths[mon].cantidad_declarada;
+            q2.fob += ObjectMonths[mon].fob;
+          }
+          if (index === 13) {
+            ObjectMonths["Sem II"] = q2;
+          }
+          if (ObjectMonths[mon].cif !== "--") {
+            total.cif += ObjectMonths[mon].cif;
+            total.cantidad_declarada += ObjectMonths[mon].cantidad_declarada;
+            total.fob += ObjectMonths[mon].fob;
+          }
+          if (index === 14) {
+            ObjectMonths["Total"] = total; //revisar
           }
         });
         dataReturn.push({ [`${yearKeys[0]}`]: ObjectMonths });
@@ -112,6 +140,13 @@ export default {
         cantidad_declarada: "--"
       };
     },
+    emptyTotales() {
+      return {
+        cif: 0,
+        fob: 0,
+        cantidad_declarada: 0
+      };
+    },
     monthArray() {
       return [
         "Jan",
@@ -120,12 +155,15 @@ export default {
         "Apr",
         "May",
         "Jun",
+        "Sem I",
         "Jul",
         "Aug",
         "Sep",
         "Oct",
         "Nov",
-        "Dic"
+        "Dic",
+        "Sem II",
+        "Total"
       ];
     },
     dataFinal() {
