@@ -1,14 +1,15 @@
 <template>
   <div class="rango">
-    <label class="text-dark mx-1" for="periodo">{{ rango }}</label>
+    <label class="text-dark p-mx-3" for="periodo">{{ rango }}</label>
     <Calendar
       id="periodo"
       :inline="true"
       v-model="value"
       view="year"
-      dateFormat="yy"
       :yearNavigator="true"
       yearRange="2000:2030"
+      v-on:year-change="dateSelect"
+      class="rounded-1"
     />
   </div>
 </template>
@@ -16,7 +17,18 @@
 <script>
 export default {
   name: "calendar",
-  props: ["rango"]
+  props: ["rango"],
+  data() {
+    return {
+      value: "",
+      context: null
+    };
+  },
+  methods: {
+    dateSelect(e) {
+      this.$emit("selectedFecha", e.year);
+    }
+  }
 };
 </script>
 

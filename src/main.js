@@ -3,9 +3,6 @@ import Vue from "vue";
 // BootstrapVue
 import "./plugins/bootstrapVue";
 
-// Vue Font-Awesome
-import "./plugins/fontAwesome";
-
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
@@ -14,7 +11,7 @@ import store from "./store";
 import "./assets/css/main.styl";
 
 // prime framework
-import "./plugins/primeVue.js"                        //icons
+import "./plugins/primeVue.js"; //icons
 
 Vue.config.productionTip = false;
 
