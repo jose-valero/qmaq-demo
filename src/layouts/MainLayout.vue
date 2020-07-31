@@ -1,25 +1,20 @@
 <template>
-  <div class="container main">
-    <Header />
+  <div class="container ">
+    <HeaderBar />
     <router-view />
-    <!--    <Footer />-->
+    <FooterBar />
   </div>
 </template>
 
 <script>
-import Header from "@/components/HeaderBar/Header";
-// import Footer from "@/components/FooterBar/Footer";
+import HeaderBar from "@/components/HeaderBar/Index";
+import FooterBar from "@/components/FooterBar/Index";
 
 export default {
   name: "MainLayout",
   components: {
-    Header
-    // Footer
+    HeaderBar,
+    FooterBar
   }
 };
 </script>
-<style scoped>
-.main {
-  height: 100vh !important;
-}
-</style>

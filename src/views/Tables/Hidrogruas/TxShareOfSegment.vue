@@ -14,7 +14,7 @@
     >
       <template v-slot:thead-top>
         <div></div>
-        <!--        <b-th variant="dark text-center" colspan="15">2015</b-th>-->
+<!--        <b-th variant="dark text-center" colspan="15">2015</b-th>-->
       </template>
 
       <template v-slot:head(subtitulo)>
@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: "TablesSubcategorias",
+  name: "TxShareOfSegment",
   data() {
     return {
       stickyHeader: true,
@@ -146,4 +146,5 @@ export default {
   background-color: orange
   color : white
 }
+
 </style>

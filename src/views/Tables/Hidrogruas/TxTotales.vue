@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  name: "TableTotal",
+  name: "TxTotales",
   data() {
     return {
       stickyHeader: true,
@@ -145,4 +145,5 @@ th {
     color : black !important
     border-top : none !important
   }
+
 </style>

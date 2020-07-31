@@ -2,10 +2,9 @@
   <div class="maq">
     <label class="text-dark mb-0 mr-2">TABLA RESULTADO</label>
     <MultiSelect
-      v-model="subcategoria"
+      v-model="selectedCities"
       :options="cities"
       optionLabel="name"
-      v-on:change="subcategoriaChange"
       placeholder=""
       class="bg-light rounded-0 "
     />
@@ -17,28 +16,15 @@ export default {
   name: "DDMaquinaria",
   data() {
     return {
-      subcategoria: null,
-      selectedSubcategoria: [],
-      cities: []
+      selectedCities: null,
+      cities: [
+        { name: "New York", code: "NY" },
+        { name: "Rome", code: "RM" },
+        { name: "London", code: "LDN" },
+        { name: "Istanbul", code: "IST" },
+        { name: "Paris", code: "PRS" }
+      ]
     };
-  },
-  created() {
-    fetch("http://localhost:8080/maquinaria/cod-venta").then(response => {
-      response.json().then(maquinarias => {
-        this.cities = [];
-        maquinarias.forEach(maquinaria =>
-          this.cities.push({ name: maquinaria, code: "a1" })
-        );
-      });
-    });
-  },
-  methods: {
-    subcategoriaChange() {
-      const arrayValues = this.subcategoria.map(v => {
-        return v.name;
-      });
-      this.$emit("subcategoriaSeleccionada", arrayValues);
-    }
   }
 };
 </script>
@@ -57,6 +43,7 @@ export default {
   }
 .p-multiselect-label-container {
     height : 18px
+    /*vertical-align : top;*/
     padding: none;
 }
 .maq label {
@@ -67,4 +54,5 @@ export default {
         font-size: .9rem;
         line-height: 0;
     }
+
 </style>
