@@ -2,13 +2,11 @@
   <div class="cat">
     <label class="text-dark mb-0 mr-2">CATEGORIA DE MAQUINARIA</label>
     <Dropdown
-      :filter="true"
       v-model="maquinaria"
       :options="maquinarias"
       optionLabel="name"
       v-on:change="maquinariaChange"
-      placeholder=""
-      class="bg-light rounded-0"
+      class="bg-light p-rounded-1"
     />
   </div>
 </template>
@@ -18,26 +16,23 @@ export default {
   name: "DDCategoria",
   data() {
     return {
-      maquinaria : null,
+      maquinaria: null,
       maquinarias: []
     };
   },
   created() {
-    fetch("http://localhost:8080/file_uploader/tipomaquinaria").then(
-      response => {
-        response.json().then(maquinarias => {
-          this.maquinarias = [];
-          maquinarias.forEach(maquinaria =>
-            this.maquinarias.push({ name: maquinaria, code: "a1" })
-          );
-        });
-      }
-
-    );
+    fetch("http://localhost:8080/maquinaria/categoria").then(response => {
+      response.json().then(maquinarias => {
+        this.maquinarias = [];
+        maquinarias.forEach(maquinaria =>
+          this.maquinarias.push({ name: maquinaria, code: "a1" })
+        );
+      });
+    });
   },
   methods: {
     maquinariaChange(evt) {
-      this.$emit('maquinaSeleccionada', evt.value.name);
+      this.$emit("maquinaSeleccionada", evt.value.name);
     }
   }
 };
@@ -50,7 +45,6 @@ export default {
 .p-dropdown .p-dropdown-label.p-placeholder {
   font-size: 1rem;
   line-height: 0.5rem;
-
 }
 
 .p-dropdown .p-dropdown-label {
@@ -60,22 +54,26 @@ export default {
 .p-dropdown.p-component {
   margin-bottom: 10px;
 }
-  .p-dropdown {
-    margin-bottom : 0!important;
-    justify-items : center;
-    height : 20px;
-    padding : 0
-  }
-.p-dropdown-trigger-icon {
-  color : black;
+
+.p-dropdown {
+  margin-bottom: 0 !important;
+  justify-items: center;
+  height: 20px;
+  padding: 0;
 }
-  .cat label {
-    vertical-align : middle;
-    margin-bottom: 1px;
-  }
+
+.p-dropdown-trigger-icon {
+  color: black;
+}
+
+.cat label {
+  vertical-align: middle;
+  margin-bottom: 1px;
+}
+
 .p-dropdown-label {
-  color: black!important;
-  font-size: .9rem !important;
+  color: black !important;
+  font-size: 0.9rem !important;
   line-height: 0;
 }
 </style>

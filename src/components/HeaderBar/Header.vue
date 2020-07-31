@@ -4,10 +4,10 @@
       <b-navbar toggleable="lg" type="dark" variant="dark" class="py-3">
         <b-navbar-brand>
           <img
-                  src="@/assets/img/qmaq2.svg"
-                  alt="qmaq logo"
-                  width="80"
-                  class="mx-2"
+            src="@/assets/img/qmaq2.svg"
+            alt="qmaq logo"
+            width="80"
+            class="mx-2"
           />
         </b-navbar-brand>
 
@@ -27,5 +27,3 @@
     </div>
   </div>
 </template>
-
-<script>
