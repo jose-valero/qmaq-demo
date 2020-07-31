@@ -121,9 +121,11 @@ export default {
             ObjectMonths["Sem II"] = q2;
           }
           if (ObjectMonths[mon].cif !== "--") {
-            total.cif += ObjectMonths[mon].cif;
-            total.cantidad_declarada += ObjectMonths[mon].cantidad_declarada;
-            total.fob += ObjectMonths[mon].fob;
+            if (mon === "Sem II" || mon === "Sem I") {
+              total.cif += ObjectMonths[mon].cif;
+              total.cantidad_declarada += ObjectMonths[mon].cantidad_declarada;
+              total.fob += ObjectMonths[mon].fob;
+            }
           }
           if (index === 14) {
             ObjectMonths["Total"] = total; //revisar
