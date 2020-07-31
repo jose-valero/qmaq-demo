@@ -1,18 +1,21 @@
 <template>
-    <div>
-        <TableTotal/>
-<!--        <TablesSubcategorias/>-->
-    </div>
+  <div>
+    <!--        <TableTotal/>-->
+    <Total />
+    <!--        <TablesSubcategorias/>-->
+  </div>
 </template>
 
 <script>
 //import TablesSubcategorias from "./TablesSubcategorias";
-import TableTotal from "./TableTotal";
+// import TableTotal from "./TableTotal";
+import Total from "./Total";
 
 export default {
   name: "ResultTables",
   components: {
-      TableTotal,
+    // TableTotal,
+    Total
     //TablesSubcategorias
   }
 };
