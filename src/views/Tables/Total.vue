@@ -1,131 +1,115 @@
 <template>
-  <div class=" d-flex table-responsive">
-    <table
-      v-if="dataTotal != null && dataTotal.length > 0"
-      class="table table-bordered p-col-4"
-    >
-      <tbody class="text-dark">
-        <tr class="d-flex flex-column p-pt-4 p-mt-4">
-          <th scope="row" class="bg-warning">{{ tipoCategoria }}</th>
-          <th scope="row">Volúmen (uds)</th>
-          <th scope="row">Factura FOB (u$s 000)</th>
-          <th scope="row">Factura CIF (u$s 000)</th>
-        </tr>
-      </tbody>
-    </table>
-    <table
-      class="table table-bordered"
-      v-for="data in this.dataTotal"
-      :key="data.key"
-    >
-      <thead class="thead-light">
-        <th
-          v-for="years in Object.keys(data)"
-          :key="years.key"
-          colspan="15"
-          class="bg-dark text-white text-center"
+    <div class=" d-flex table-responsive tablasTotal">
+        <table
+                v-if="dataTotal != null && dataTotal.length > 0"
+                class="table table-bordered p-col-4"
         >
-          {{ years }}
-        </th>
-        <tr>
-          <span v-for="datosMeses in Object.values(data)" :key="datosMeses.key">
-            <th
-              v-for="meses in Object.keys(datosMeses)"
-              :key="meses.key"
-              scope="col"
-            >
-              {{ meses }}
-            </th>
-          </span>
-        </tr>
-      </thead>
+            <tbody class="text-dark">
+            <tr class="d-flex flex-column p-pt-4 p-mt-4">
+                <th scope="row" class="bg-warning">{{ tipoCategoria }}</th>
+                <th scope="row">Volúmen (uds)</th>
+                <th scope="row">Factura FOB (u$s 000)</th>
+                <th scope="row">Factura CIF (u$s 000)</th>
+            </tr>
+            </tbody>
+        </table>
+        <table
+                class="table table-bordered pb-"
+                v-for="data in this.dataTotal"
+                :key="data.key"
+        >
+            <thead class="thead-light">
+            <tr v-for="year in Object.keys(data)" :key="year">
+                <th
+                        colspan="15"
+                        class="bg-dark text-white text-center"
+                >
+                    {{ year}}
+                </th>
+            </tr>
 
-      <tbody>
-        <tr>
-          <span v-for="datosMeses in Object.values(data)" :key="datosMeses.key">
-            <td
-              v-for="datosMeses2 in Object.values(datosMeses)"
-              :key="datosMeses2.key"
-            >
-              {{ datosMeses2.cantidad_declarada }}
-            </td>
-          </span>
-        </tr>
-        <tr>
-          <span v-for="datosMeses in Object.values(data)" :key="datosMeses.key">
-            <td
-              v-for="datosMeses2 in Object.values(datosMeses)"
-              :key="datosMeses2.key"
-            >
-              {{
-                Number(datosMeses2.fob)
-                  ? datosMeses2.fob.toFixed(2)
-                  : datosMeses2.fob
-              }}
-            </td>
-          </span>
-        </tr>
-        <tr>
-          <span v-for="datosMeses in Object.values(data)" :key="datosMeses.key">
-            <td
-              v-for="datosMeses2 in Object.values(datosMeses)"
-              :key="datosMeses2.key"
-            >
-              {{
-                Number(datosMeses2.cif)
-                  ? datosMeses2.cif.toFixed(2)
-                  : datosMeses2.cif
-              }}
-            </td>
-          </span>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+            <tr v-for="meses in Object.values(data)"
+                :key="meses.key">
+                <th v-for="mes in Object.keys(meses)" :key="mes" class="text-center">
+                    {{ mes }}
+                </th>
+            </tr>
+
+
+            </thead>
+
+                  <tbody class="text-center">
+                    <tr v-for="datosMeses in Object.values(data)" :key="datosMeses.key">
+                        <td
+                          v-for="datosMeses2 in Object.values(datosMeses)"
+                          :key="datosMeses2.key"
+                        >
+                          {{ datosMeses2.cantidad_declarada }}
+                        </td>
+                    </tr>
+                    <tr v-for="datosMeses in Object.values(data)" :key="datosMeses.key">
+                        <td
+                          v-for="datosMeses2 in Object.values(datosMeses)"
+                          :key="datosMeses2.key"
+                        >
+                          {{
+                            Number(datosMeses2.fob)
+                              ? datosMeses2.fob.toFixed(2)
+                              : datosMeses2.fob
+                          }}
+                        </td>
+                    </tr>
+                    <tr v-for="datosMeses in Object.values(data)" :key="datosMeses.key">
+                        <td
+                          v-for="datosMeses2 in Object.values(datosMeses)"
+                          :key="datosMeses2.key"
+                        >
+                          {{
+                            Number(datosMeses2.cif)
+                              ? datosMeses2.cif.toFixed(2)
+                              : datosMeses2.cif
+                          }}
+                        </td>
+                    </tr>
+                  </tbody>
+        </table>
+    </div>
 </template>
 
 <script>
-import TableService from "../../service/TableService";
-import { eventBus } from "../../eventBus/EventBus";
+    import TableService from "../../service/TableService";
+    import {eventBus} from "../../eventBus/EventBus";
 
-export default {
-  name: "Total",
-  data() {
-    return {
-      dataTotal: null,
-      tablaTotalService: null,
-      tipoCategoria: ""
+    export default {
+        name: "Total",
+        data() {
+            return {
+                dataTotal: null,
+                tablaTotalService: null,
+                tipoCategoria: ""
+            };
+        },
+        created() {
+            this.tablaTotalService = new TableService();
+            eventBus.$on("eventDatatotal", this.getDataTotal);
+            eventBus.$on("eventCategoria", this.getCategoriaMaquinaria);
+        },
+        methods: {
+            getDataTotal(data) {
+                this.dataTotal = data;
+            },
+            getCategoriaMaquinaria(categoria) {
+                this.tipoCategoria = categoria;
+            }
+        }
     };
-  },
-  created() {
-    this.tablaTotalService = new TableService();
-    eventBus.$on("eventDatatotal", this.getDataTotal);
-    eventBus.$on("eventCategoria", this.getCategoriaMaquinaria);
-  },
-  methods: {
-    getDataTotal(data) {
-      this.dataTotal = data;
-    },
-    getCategoriaMaquinaria(categoria) {
-      this.tipoCategoria = categoria;
-    }
-  }
-};
 </script>
 
 <style scoped>
-.table thead th {
-  border-bottom: none;
-}
-
-.table-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.product-image {
-  width: 100px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-}
+    .table thead th {
+        border-bottom: none;
+    }
+    .tablasTotal {
+        font-size: .8rem;
+    }
 </style>

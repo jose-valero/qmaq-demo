@@ -107,9 +107,9 @@ export default {
     },
     emptyMonth() {
       return {
-        cif: "-",
-        fob: "-",
-        cantidad_declarada: "-"
+        cif: "--",
+        fob: "--",
+        cantidad_declarada: "--"
       };
     },
     monthArray() {
