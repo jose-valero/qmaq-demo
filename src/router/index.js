@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import ResultFiltro from "../views/Filtro/ResultFiltro.vue";
+import ResultFiltro from "../views/Filtro/Filtro.vue";
 import Home from "../views/Home/Home";
 
 Vue.use(VueRouter);
