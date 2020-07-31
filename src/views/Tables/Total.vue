@@ -29,7 +29,7 @@
           <th
             v-for="mes in Object.keys(meses)"
             :key="mes"
-            class="text-center"
+            class="text-center text-nowrap"
             v-bind:class="{
               colorTotal: mes === 'Sem I' || mes === 'Sem II' || mes === 'Total'
             }"
