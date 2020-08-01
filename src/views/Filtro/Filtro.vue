@@ -211,7 +211,7 @@ export default {
         .then(data => {
           this.dataTotal = this.mergeMonths(data);
           eventBus.$emit("eventDatatotal", this.dataTotal);
-          eventBus.$emit("eventCategoria", this.categoriaSeleccionada);
+          eventBus.$emit("eventCategoria", this.maquinaria.name);
         });
     },
     isButtonDisabled() {
