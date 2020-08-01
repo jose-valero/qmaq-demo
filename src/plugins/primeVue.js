@@ -1,7 +1,6 @@
 import Vue from "vue";
 
 //componentes
-import Calendar from "primevue/calendar";
 import MultiSelect from "primevue/multiselect";
 import Dropdown from "primevue/dropdown";
 import Button from "primevue/button";
@@ -17,7 +16,6 @@ import "primeicons/primeicons.css";
 import "primeflex/primeflex.css";
 
 //implementacion
-Vue.component("Calendar", Calendar);
 Vue.component("MultiSelect", MultiSelect);
 Vue.component("Dropdown", Dropdown);
 Vue.component("Button", Button);
