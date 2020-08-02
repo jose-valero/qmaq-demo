@@ -1,10 +1,10 @@
 <template>
   <div class="p-grid p-pt-2 p-align-center">
-    <div class="p-col p-shadow-2 p-m-2">
+    <div class="p-col p-shadow-2 p-m-2 bg-light">
       <div class="p-mx-6 p-my-4">
         <h6 class="p-text-bold">
-          DESDE ESTA APLICACION PODRA SUBIR ARCHIVOS CORRESPONDIENTES A LA
-          ADUANA
+          Desde esta aplicación podrá subir los archivos correspondientes para
+          visualizar tabla de resultados totales
         </h6>
         <FileUpload
           name="total"
@@ -25,8 +25,8 @@
         </div>
         <div v-else-if="errorCarga" class="text-dark mt-3">
           Archivo no pudo ser cargado, no corresponde al tipo de archivo
-          esperado <br />
-          Recuerde debe ser proveniente de la aduana y de extension .csv
+          esperado
+          <br />Recuerde debe ser proveniente de la aduana y de extension .csv
         </div>
       </div>
     </div>
@@ -63,11 +63,7 @@ export default {
 </script>
 
 <style lang="stylus">
-h5 {
-  color: #f56827;
-}
-
 h6 {
-  color: black;
+  color: #1f2d40;
 }
 </style>

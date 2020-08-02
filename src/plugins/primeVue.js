@@ -1,3 +1,4 @@
+//instancia
 import Vue from "vue";
 
 //componentes

@@ -1,7 +1,7 @@
 <template>
   <div>
     <!--        <TableTotal/>-->
-    <Total />
+    <Total class="p-pb-4 " />
     <!--        <TablesSubcategorias/>-->
   </div>
 </template>
@@ -12,9 +12,13 @@
 import Total from "./Total";
 
 export default {
+  data() {
+    return {};
+  },
   name: "ResultTables",
   components: {
     // TableTotal,
+
     Total
     //TablesSubcategorias
   }

@@ -15,13 +15,13 @@ export default {
 };
 </script>
 
-<style lang="stylus">
+<style scoped>
 #app {
-
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  padding: 50px 0;
+  font-family: "Josefin Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #ffffff;
   background-color: #f0f0f0;
-}
-</style>
+}</style
+>>

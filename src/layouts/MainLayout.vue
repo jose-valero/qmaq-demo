@@ -1,7 +1,9 @@
 <template>
   <div class="container main">
     <Header />
-    <router-view />
+    <transition name="fade">
+      <router-view />
+    </transition>
     <!--    <Footer />-->
   </div>
 </template>
@@ -21,5 +23,12 @@ export default {
 <style scoped>
 .main {
   height: 100vh !important;
+}
+.fade-enter-active {
+  transition: transform 1s, opacity 2s;
+}
+.fade-enter {
+  opacity: 0;
+  transform: translateY(-10px);
 }
 </style>

@@ -6,7 +6,9 @@
     >
       <tbody class="text-dark">
         <tr class="d-flex flex-column headerTabla">
-          <th scope="row" class="bg-warning">{{ tipoCategoria }}</th>
+          <th scope="row" class="bg-warning text-center">
+            {{ tipoCategoria }}
+          </th>
           <th scope="row">Volúmen (uds)</th>
           <th scope="row">Factura FOB (u$s 000)</th>
           <th scope="row">Factura CIF (u$s 000)</th>
@@ -112,9 +114,10 @@ export default {
 }
 .tablasTotal {
   font-size: 0.8rem;
+  line-height: 2px;
 }
 .headerTabla {
-  padding-top: 43px;
+  padding-top: 24px;
 }
 .colorTotal {
   background-color: #ffc107 !important;

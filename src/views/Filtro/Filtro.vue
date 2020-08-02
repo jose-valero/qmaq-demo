@@ -1,40 +1,40 @@
 <template>
-  <div class="container bg-light filtro">
+  <div class="container bg-light filtro p-shadow-1 p-my-2">
     <div class="row">
-      <h5 class="text-dark p-mx-5 p-p-0 p-my-4">BUSQUEDA DE DATOS ANUALES</h5>
+      <h5 class="text-dark p-mx-5 p-my-4">BUSQUEDA DE DATOS ANUALES</h5>
     </div>
 
-    <div class="mx-0 p-py-2 p-shadow-1">
+    <div class="mx-0 p-py-2 p-shadow-2">
       <ul
         class="d-flex p-justify-around p-align-center p-text-bold p-p-0 p-m-0"
       >
         <li class="p-ml-0">
-          <label class="text-dark mb-0 mr-2">DESDE</label>
+          <label class="text-dark p-mb-0 p-mr-2">DESDE</label>
           <Dropdown
             v-model="desde"
             :options="fechaDesde"
             optionLabel="name"
-            class="bg-light p-rounded-1"
+            class="bg-light p-rounded-1 p-py-1"
             v-on:change="isButtonDisabled"
           />
         </li>
         <li class="p-ml-0">
-          <label class="text-dark mb-0 mr-2">HASTA</label>
+          <label class="text-dark p-mb-0 p-mr-2">HASTA</label>
           <Dropdown
             v-model="hasta"
             :options="fechaHasta"
             optionLabel="name"
-            class="bg-light p-rounded-1"
+            class="bg-light p-rounded-1 p-py-1"
             v-on:change="isButtonDisabled"
           />
         </li>
         <li class="p-ml-0">
-          <label class="text-dark mb-0 mr-2">CATEGORIA DE MAQUINARIA</label>
+          <label class="text-dark p-mb-0 p-mr-2">CATEGORIA DE MAQUINARIA</label>
           <Dropdown
             v-model="maquinaria"
             :options="maquinarias"
             optionLabel="name"
-            class="bg-light p-rounded-1"
+            class="bg-light p-rounded-1 p-py-1"
             v-on:change="isButtonDisabled"
           />
         </li>
@@ -55,8 +55,7 @@
         </li>
       </ul>
     </div>
-
-    <ResultTables class="mt-4" />
+    <ResultTables class="p-mt-4" />
   </div>
 </template>
 
@@ -199,7 +198,7 @@ export default {
         "Sep",
         "Oct",
         "Nov",
-        "Dic",
+        "Dec",
         "Sem II",
         "Total"
       ];
@@ -241,46 +240,30 @@ export default {
 
 <style lang="stylus" scope>
 .filtro {
-    font-size: .8rem;
-}
-
-/*categoria*/
-.cat {
-    text-align: center;
+  font-size: 0.8rem;
 }
 
 .p-dropdown .p-dropdown-label.p-placeholder {
-    font-size: 1rem;
-    line-height: 0.5rem;
+  font-size: 1rem;
+  line-height: 0.5rem;
 }
 
 .p-dropdown .p-dropdown-label {
-    padding-right: 1rem;
-}
-
-.p-dropdown.p-component {
-    margin-bottom: 10px;
-}
-
-.p-dropdown {
-    margin-bottom: 0 !important;
-    justify-items: center;
-    height: 20px;
-    padding: 0;
+  padding-right: 1rem;
 }
 
 .p-dropdown-trigger-icon {
-    color: black;
+  color: #1f2d40;
 }
 
 .cat label {
-    vertical-align: middle;
-    margin-bottom: 1px;
+  vertical-align: middle;
+  margin-bottom: 1px;
 }
 
 .p-dropdown-label {
-    color: black !important;
-    font-size: 0.9rem !important;
-    line-height: 0;
+  color: #1f2d40 !important;
+  font-size: 0.9rem !important;
+  line-height: 0;
 }
 </style>
