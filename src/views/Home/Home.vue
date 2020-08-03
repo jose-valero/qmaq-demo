@@ -3,8 +3,7 @@
     <div class="p-col p-shadow-2 p-m-2 bg-light">
       <div class="p-mx-6 p-my-4">
         <h6 class="p-text-bold">
-          Desde esta aplicación podrá subir los archivos correspondientes para
-          visualizar tabla de resultados totales
+          Subir archivos de Aduana.
         </h6>
         <FileUpload
           name="total"
