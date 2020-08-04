@@ -16,6 +16,7 @@
             optionLabel="name"
             class="bg-light p-rounded-1 p-py-1"
             v-on:change="isButtonDisabled"
+            :showClear="true"
           />
         </li>
         <li class="p-ml-0">
@@ -26,6 +27,7 @@
             optionLabel="name"
             class="bg-light p-rounded-1 p-py-1"
             v-on:change="isButtonDisabled"
+            :showClear="true"
           />
         </li>
         <li class="p-ml-0">
@@ -36,20 +38,14 @@
             optionLabel="name"
             class="bg-light p-rounded-1 p-py-1"
             v-on:change="isButtonDisabled"
+            :showClear="true"
           />
         </li>
         <li class="p-ml-0">
           <Button
-            v-if="!isClear"
             :disabled="botonDisabled"
             v-on:click="dataFinal"
             label="Buscar"
-            class="p-button-sm p-button-raised p-button-warning"
-          ></Button>
-          <Button
-            v-if="isClear"
-            v-on:click="limpiar"
-            label="Limpiar"
             class="p-button-sm p-button-raised p-button-warning"
           ></Button>
         </li>
@@ -77,7 +73,6 @@ export default {
       tablaTotalService: null,
       dataTotal: null,
       botonDisabled: false,
-      isClear: false,
       maquinarias: [],
       fechaDesde: [
         { name: 2010, code: "2010" },
@@ -204,7 +199,6 @@ export default {
       ];
     },
     dataFinal() {
-      this.isClear = true;
       this.tablaTotalService
         .getTablaTotal(this.desde.name, this.hasta.name, this.maquinaria.name)
         .then(data => {
@@ -223,16 +217,6 @@ export default {
       } else {
         this.botonDisabled = false;
       }
-    },
-    limpiar() {
-      while (this.dataTotal.length > 0) {
-        this.dataTotal.pop();
-      }
-      this.maquinaria = null;
-      this.desde = null;
-      this.hasta = null;
-      this.isClear = false;
-      this.isButtonDisabled();
     }
   }
 };
@@ -252,8 +236,12 @@ export default {
   padding-right: 1rem;
 }
 
-.p-dropdown-trigger-icon {
-  color: #1f2d40;
+.p-dropdown-trigger-icon, .p-dropdown .p-dropdown-clear-icon {
+  color: #1f2d40 !important;
+}
+.p-dropdown .p-dropdown-clear-icon {
+  font-size: .8rem !important;
+  top: 65% !important;
 }
 
 .cat label {
